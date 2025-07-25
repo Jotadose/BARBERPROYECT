@@ -3,234 +3,312 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>El Rincón del Caballero - Barbería con Estilo</title>
-    <meta name="description" content="Barbería premium para el hombre moderno. Reserva tu cita online y descubre nuestros cortes de pelo y arreglos de barba.">
+    <title>Michael The Barber Studios - Alta Barbería & Estilo</title>
+    <meta name="description" content="Servicios de barbería de alto estándar. Especialistas en cortes, fades, colorimetría y diseño. Reserva tu cita en Michael The Barber Studios.">
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Google Fonts: Bebas Neue & Montserrat -->
+    <!-- Google Fonts: Oswald & Poppins -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     
     <!-- Alpine.js for interactivity -->
     <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
     <style>
-        /* Custom styles to apply the fonts */
+        /* Add custom animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
         body {
-            font-family: 'Montserrat', sans-serif;
-            background-color: #111827; /* bg-gray-900 */
+            font-family: 'Poppins', sans-serif;
+            background-color: #000000;
         }
         h1, h2, h3, .font-display {
-            font-family: 'Bebas Neue', sans-serif;
+            font-family: 'Oswald', sans-serif;
         }
-        .hero-bg {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://placehold.co/1920x1080/2d3748/ffffff?text=Barbero+Trabajando');
-            background-size: cover;
-            background-position: center;
+        
+        /* Video background styles */
+        .hero-video-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+        }
+        #heroVideo {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .hero-overlay {
+            background-color: rgba(0,0,0,0.8);
+        }
+
+        .btn-primary {
+            @apply bg-white text-black font-bold py-3 px-8 uppercase tracking-wider hover:bg-gray-300 transition duration-300 transform hover:scale-105;
+        }
+        .btn-secondary {
+            @apply bg-transparent border-2 border-white text-white font-bold py-3 px-8 uppercase tracking-wider hover:bg-white hover:text-black transition duration-300 transform hover:scale-105;
+        }
+        
+        /* Add intersection observer for animations */
+        [x-data].animated {
+            opacity: 0;
+            transition: opacity 1s;
+        }
+        [x-data].animated.is-visible {
+            opacity: 1;
         }
     </style>
 </head>
-<body class="text-gray-300">
+<body class="text-gray-200">
 
     <!-- Header -->
-    <header class="bg-gray-900/80 backdrop-blur-sm fixed top-0 left-0 right-0 z-50">
+    <header class="bg-black/80 backdrop-blur-sm fixed top-0 left-0 right-0 z-50">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#" class="font-display text-3xl text-white tracking-wider">El Rincón del Caballero</a>
-            <nav class="hidden md:flex space-x-8">
-                <a href="#servicios" class="hover:text-amber-400 transition duration-300">Servicios</a>
-                <a href="#galeria" class="hover:text-amber-400 transition duration-300">Galería</a>
-                <a href="#barberos" class="hover:text-amber-400 transition duration-300">Barberos</a>
-                <a href="#contacto" class="hover:text-amber-400 transition duration-300">Contacto</a>
-            </nav>
-            <a href="#reserva" class="hidden md:block bg-amber-500 hover:bg-amber-600 text-gray-900 font-bold py-2 px-4 rounded-lg transition duration-300">
-                Reservar Cita
+            <a href="#" class="font-display text-3xl text-white tracking-wider">
+                MB <span class="hidden sm:inline">STUDIOS</span>
             </a>
+            <nav class="hidden md:flex space-x-8 uppercase text-sm tracking-widest">
+                <a href="#destacados" class="hover:text-white transition duration-300">Trabajos</a>
+                <a href="#servicios" class="hover:text-white transition duration-300">Servicios</a>
+                <a href="#equipo" class="hover:text-white transition duration-300">Equipo</a>
+                <a href="#reserva" class="hover:text-white transition duration-300">Reserva</a>
+            </nav>
             <div x-data="{ open: false }" class="md:hidden">
                 <button @click="open = !open" class="text-white focus:outline-none">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
                 </button>
-                <div x-show="open" @click.away="open = false" class="absolute top-full right-0 mt-2 w-48 bg-gray-800 rounded-lg shadow-lg py-2">
-                    <a href="#servicios" @click="open = false" class="block px-4 py-2 text-white hover:bg-gray-700">Servicios</a>
-                    <a href="#galeria" @click="open = false" class="block px-4 py-2 text-white hover:bg-gray-700">Galería</a>
-                    <a href="#barberos" @click="open = false" class="block px-4 py-2 text-white hover:bg-gray-700">Barberos</a>
-                    <a href="#contacto" @click="open = false" class="block px-4 py-2 text-white hover:bg-gray-700">Contacto</a>
-                    <a href="#reserva" @click="open = false" class="block px-4 py-2 mt-2 bg-amber-500 text-gray-900 font-bold text-center">Reservar Cita</a>
+                <div x-show="open" @click.away="open = false" class="absolute top-full right-0 mt-2 w-full bg-black rounded-lg shadow-lg p-4">
+                    <a href="#destacados" @click="open = false" class="block text-center py-2 text-white uppercase hover:bg-gray-900">Trabajos</a>
+                    <a href="#servicios" @click="open = false" class="block text-center py-2 text-white uppercase hover:bg-gray-900">Servicios</a>
+                    <a href="#equipo" @click="open = false" class="block text-center py-2 text-white uppercase hover:bg-gray-900">Equipo</a>
+                    <a href="#reserva" @click="open = false" class="block text-center py-3 mt-2 text-black bg-white font-bold uppercase">Reservar Cita</a>
                 </div>
             </div>
         </div>
     </header>
 
     <main>
-        <!-- Hero Section -->
-        <section id="inicio" class="hero-bg h-screen flex items-center justify-center text-center text-white pt-16">
-            <div class="container mx-auto px-6">
-                <h1 class="text-6xl md:text-8xl lg:text-9xl font-display tracking-widest uppercase">Estilo & Precisión</h1>
-                <p class="text-lg md:text-xl mt-4 max-w-2xl mx-auto">Donde la tradición se encuentra con la técnica moderna. Tu look perfecto te espera.</p>
-                <a href="#reserva" class="mt-8 inline-block bg-amber-500 hover:bg-amber-600 text-gray-900 font-bold py-3 px-8 rounded-lg text-lg transition duration-300">
-                    Pide tu Cita Ahora
-                </a>
+        <!-- Hero Section with Video -->
+        <section id="inicio" class="relative min-h-screen flex items-center justify-center text-center text-white pt-20 hero-overlay">
+            <div class="hero-video-container">
+                <!-- Placeholder video. Replace with a real video URL. -->
+                <video autoplay loop muted playsinline id="heroVideo">
+                    <source src="https://assets.mixkit.co/videos/preview/mixkit-barber-giving-a-client-a-haircut-48421-large.mp4" type="video/mp4">
+                    [Video de un barbero trabajando]
+                </video>
+            </div>
+            <div class="relative z-10 fade-in-up">
+                <h1 class="text-5xl md:text-7xl lg:text-8xl font-display tracking-wider uppercase">Michael The Barber</h1>
+                <h2 class="text-2xl md:text-4xl font-display tracking-widest uppercase text-gray-400 mt-2">Studios</h2>
+                <p class="text-lg md:text-xl mt-6 max-w-2xl mx-auto font-light">Servicios de barbería de alto estándar dedicados al trabajo de imagen masculino.</p>
+                <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <a href="#reserva" class="btn-primary w-full sm:w-auto">Reservar Cita</a>
+                    <a href="#servicios" class="btn-secondary w-full sm:w-auto">Ver Servicios</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Work Section -->
+        <section id="destacados" class="py-20 bg-black" x-data="{}" x-intersect.once="document.querySelector('#destacados').classList.add('is-visible')" class="animated">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-5xl font-display text-white tracking-wider uppercase">Trabajos Destacados</h2>
+                <div class="h-1 w-24 bg-white mx-auto mt-4 mb-12"></div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="group relative overflow-hidden">
+                        <img src="https://placehold.co/600x800/2d3748/ffffff?text=Corte+Fade" alt="[Corte de pelo con fade]" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-black bg-opacity-50 flex items-end p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                            <h3 class="text-2xl text-white font-display uppercase">Fades Perfectos</h3>
+                        </div>
+                    </div>
+                    <div class="group relative overflow-hidden">
+                        <img src="https://placehold.co/600x800/4a5568/ffffff?text=Colorimetría" alt="[Trabajo de colorimetría]" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-black bg-opacity-50 flex items-end p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                            <h3 class="text-2xl text-white font-display uppercase">Colorimetría Pro</h3>
+                        </div>
+                    </div>
+                    <div class="group relative overflow-hidden">
+                        <img src="https://placehold.co/600x800/718096/ffffff?text=Diseño+Freestyle" alt="[Diseño de pelo freestyle]" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-black bg-opacity-50 flex items-end p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                            <h3 class="text-2xl text-white font-display uppercase">Diseño Freestyle</h3>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
         <!-- Services Section -->
-        <section id="servicios" class="py-20 bg-gray-800">
+        <section id="servicios" class="py-20 bg-gray-900" x-data="{}" x-intersect.once="document.querySelector('#servicios').classList.add('is-visible')" class="animated">
             <div class="container mx-auto px-6 text-center">
-                <h2 class="text-5xl font-display text-white tracking-wider">Nuestros Servicios</h2>
-                <div class="h-1 w-20 bg-amber-500 mx-auto mt-4 mb-12"></div>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
-                    <!-- Service Item 1 -->
-                    <div class="bg-gray-900 p-8 rounded-lg border border-gray-700 transform hover:scale-105 transition-transform duration-300">
-                        <h3 class="text-2xl font-display text-amber-400">Corte Clásico</h3>
-                        <p class="mt-2 text-gray-400">Técnica de tijera y máquina para un look atemporal y definido.</p>
-                        <p class="mt-4 text-3xl font-display text-white">20€</p>
+                <h2 class="text-5xl font-display text-white tracking-wider uppercase">Nuestros Servicios</h2>
+                <div class="h-1 w-24 bg-white mx-auto mt-4 mb-12"></div>
+                <div class="max-w-4xl mx-auto text-left space-y-12">
+                     <!-- Categories and services here... -->
+                    <div>
+                        <h3 class="text-3xl font-display text-white tracking-widest border-b-2 border-gray-700 pb-2 mb-6">BARBERÍA</h3>
+                        <div class="space-y-4">
+                            <div class="flex justify-between items-center"><p class="text-xl">Corte de Cabello</p><p class="text-xl font-bold">$12.000</p></div>
+                            <div class="flex justify-between items-center"><p class="text-xl">Corte de Cabello + Barba</p><p class="text-xl font-bold">$16.000</p></div>
+                            <div class="flex justify-between items-center"><p class="text-xl">Corte + Barba + Limpieza Facial</p><p class="text-xl font-bold">$22.000</p></div>
+                            <div class="flex justify-between items-center"><p class="text-xl">Barba</p><p class="text-xl font-bold">$6.000</p></div>
+                        </div>
                     </div>
-                    <!-- Service Item 2 -->
-                    <div class="bg-gray-900 p-8 rounded-lg border border-gray-700 transform hover:scale-105 transition-transform duration-300">
-                        <h3 class="text-2xl font-display text-amber-400">Arreglo de Barba Premium</h3>
-                        <p class="mt-2 text-gray-400">Diseño, perfilado, toalla caliente y aceites esenciales.</p>
-                        <p class="mt-4 text-3xl font-display text-white">15€</p>
+                    <div>
+                        <h3 class="text-3xl font-display text-white tracking-widest border-b-2 border-gray-700 pb-2 mb-6">COLORIMETRÍA</h3>
+                        <div class="space-y-4">
+                            <div class="flex justify-between items-center"><p class="text-xl">Bloque de Color</p><p class="text-xl font-bold">$60.000</p></div>
+                            <div class="flex justify-between items-center"><p class="text-xl">Platinado Global</p><p class="text-xl font-bold">$70.000</p></div>
+                            <div class="flex justify-between items-center"><p class="text-xl">Visos</p><p class="text-xl font-bold">$60.000</p></div>
+                        </div>
                     </div>
-                    <!-- Service Item 3 -->
-                    <div class="bg-gray-900 p-8 rounded-lg border border-gray-700 transform hover:scale-105 transition-transform duration-300">
-                        <h3 class="text-2xl font-display text-amber-400">Pack Completo</h3>
-                        <p class="mt-2 text-gray-400">Corte de pelo y arreglo de barba. La experiencia total.</p>
-                        <p class="mt-4 text-3xl font-display text-white">30€</p>
+                    <div>
+                        <h3 class="text-3xl font-display text-white tracking-widest border-b-2 border-gray-700 pb-2 mb-6">EXTRAS</h3>
+                        <div class="space-y-4">
+                            <div class="flex justify-between items-center"><p class="text-xl">Ondulación Permanente</p><p class="text-xl font-bold">$55.000</p></div>
+                        </div>
                     </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Team Section -->
+        <section id="equipo" class="py-20 bg-black" x-data="{}" x-intersect.once="document.querySelector('#equipo').classList.add('is-visible')" class="animated">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-5xl font-display text-white tracking-wider uppercase">Nuestro Equipo</h2>
+                <div class="h-1 w-24 bg-white mx-auto mt-4 mb-12"></div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-5xl mx-auto">
+                    <!-- Team members here... -->
+                    <div class="text-center group"><img src="https://placehold.co/400x400/1a1a1a/ffffff?text=Michael" alt="[Retrato del barbero Michael]" class="w-48 h-48 rounded-full mx-auto border-4 border-white object-cover transform group-hover:scale-110 transition-transform duration-300"><h3 class="mt-5 text-2xl font-display text-white uppercase">Michael The Barber</h3><p class="text-gray-400">Fundador / Especialista en Color</p></div>
+                    <div class="text-center group"><img src="https://placehold.co/400x400/1a1a1a/ffffff?text=Aleee" alt="[Retrato del barbero Aleee Cut]" class="w-48 h-48 rounded-full mx-auto border-4 border-white object-cover transform group-hover:scale-110 transition-transform duration-300"><h3 class="mt-5 text-2xl font-display text-white uppercase">Aleee Cut</h3><p class="text-gray-400">Experto en Fades</p></div>
+                    <div class="text-center group"><img src="https://placehold.co/400x400/1a1a1a/ffffff?text=Kevo" alt="[Retrato del barbero Kevo Cuts]" class="w-48 h-48 rounded-full mx-auto border-4 border-white object-cover transform group-hover:scale-110 transition-transform duration-300"><h3 class="mt-5 text-2xl font-display text-white uppercase">Kevo Cuts</h3><p class="text-gray-400">Especialista en Diseño Freestyle</p></div>
                 </div>
             </div>
         </section>
 
         <!-- Gallery Section -->
-        <section id="galeria" class="py-20 bg-gray-900">
+        <section id="galeria" class="py-20 bg-gray-900" x-data="{}" x-intersect.once="document.querySelector('#galeria').classList.add('is-visible')" class="animated">
             <div class="container mx-auto px-6 text-center">
-                <h2 class="text-5xl font-display text-white tracking-wider">Galería de Estilos</h2>
-                <div class="h-1 w-20 bg-amber-500 mx-auto mt-4 mb-12"></div>
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                    <img src="https://placehold.co/400x500/333/fff?text=Corte+1" alt="[Imagen de un corte de pelo moderno]" class="rounded-lg object-cover w-full h-full hover:opacity-80 transition-opacity duration-300 cursor-pointer">
-                    <img src="https://placehold.co/400x500/444/fff?text=Barba+1" alt="[Imagen de una barba bien cuidada]" class="rounded-lg object-cover w-full h-full hover:opacity-80 transition-opacity duration-300 cursor-pointer">
-                    <img src="https://placehold.co/400x500/555/fff?text=Corte+2" alt="[Imagen de un corte de pelo clásico]" class="rounded-lg object-cover w-full h-full hover:opacity-80 transition-opacity duration-300 cursor-pointer">
-                    <img src="https://placehold.co/400x500/666/fff?text=Corte+3" alt="[Imagen de un peinado con degradado]" class="rounded-lg object-cover w-full h-full hover:opacity-80 transition-opacity duration-300 cursor-pointer">
+                <h2 class="text-5xl font-display text-white tracking-wider uppercase">Galería Completa</h2>
+                <div class="h-1 w-24 bg-white mx-auto mt-4 mb-12"></div>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-2">
+                    <!-- Expanded gallery images -->
+                    <img src="https://placehold.co/400x500/333/fff?text=Estilo+1" alt="[Imagen de un corte de pelo con fade]" class="object-cover w-full h-full hover:opacity-75 transition-opacity duration-300">
+                    <img src="https://placehold.co/400x500/444/fff?text=Estilo+2" alt="[Imagen de un cabello platinado]" class="object-cover w-full h-full hover:opacity-75 transition-opacity duration-300">
+                    <img src="https://placehold.co/400x500/555/fff?text=Estilo+3" alt="[Imagen de un diseño de líneas en el pelo]" class="object-cover w-full h-full hover:opacity-75 transition-opacity duration-300">
+                    <img src="https://placehold.co/400x500/666/fff?text=Estilo+4" alt="[Imagen de una barba perfilada]" class="object-cover w-full h-full hover:opacity-75 transition-opacity duration-300">
+                    <img src="https://placehold.co/400x500/777/fff?text=Estilo+5" alt="[Imagen de un corte de pelo moderno]" class="object-cover w-full h-full hover:opacity-75 transition-opacity duration-300">
+                    <img src="https://placehold.co/400x500/888/fff?text=Estilo+6" alt="[Imagen de un peinado con textura]" class="object-cover w-full h-full hover:opacity-75 transition-opacity duration-300">
+                    <img src="https://placehold.co/400x500/999/fff?text=Estilo+7" alt="[Imagen de un corte clásico]" class="object-cover w-full h-full hover:opacity-75 transition-opacity duration-300">
+                    <img src="https://placehold.co/400x500/AAA/fff?text=Estilo+8" alt="[Imagen de un arreglo de barba]" class="object-cover w-full h-full hover:opacity-75 transition-opacity duration-300">
                 </div>
             </div>
         </section>
 
-        <!-- Barbers Section -->
-        <section id="barberos" class="py-20 bg-gray-800">
-            <div class="container mx-auto px-6 text-center">
-                <h2 class="text-5xl font-display text-white tracking-wider">Nuestros Barberos</h2>
-                <div class="h-1 w-20 bg-amber-500 mx-auto mt-4 mb-12"></div>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto">
-                    <!-- Barber 1 -->
-                    <div class="text-center">
-                        <img src="https://placehold.co/300x300/777/fff?text=Juan" alt="[Retrato del barbero Juan]" class="w-48 h-48 rounded-full mx-auto border-4 border-amber-500">
-                        <h3 class="mt-4 text-2xl font-display text-white">Juan Pérez</h3>
-                        <p class="text-amber-400">Maestro Barbero</p>
-                        <p class="mt-2 text-gray-400 max-w-xs mx-auto">Con más de 10 años de experiencia, Juan es un experto en cortes clásicos y afeitado a navaja.</p>
-                    </div>
-                    <!-- Barber 2 -->
-                    <div class="text-center">
-                        <img src="https://placehold.co/300x300/888/fff?text=Carlos" alt="[Retrato del barbero Carlos]" class="w-48 h-48 rounded-full mx-auto border-4 border-amber-500">
-                        <h3 class="mt-4 text-2xl font-display text-white">Carlos Gómez</h3>
-                        <p class="text-amber-400">Especialista en Estilo Moderno</p>
-                        <p class="mt-2 text-gray-400 max-w-xs mx-auto">Carlos vive y respira las últimas tendencias. Ideal para degradados (fades) y diseños atrevidos.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Booking & Contact Section -->
-        <section id="reserva" class="py-20 bg-gray-900" x-data="bookingForm()">
+        <!-- Booking Section -->
+        <section id="reserva" class="py-20 bg-black" x-data="bookingForm()">
             <div class="container mx-auto px-6">
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                    <!-- Form -->
-                    <div>
-                        <h2 class="text-5xl font-display text-white tracking-wider">Reserva tu Cita</h2>
-                        <div class="h-1 w-20 bg-amber-500 mt-4 mb-8"></div>
-                        <form @submit.prevent="submitForm">
-                            <div x-show="successMessage" class="bg-green-500 text-white p-4 rounded-lg mb-4">
-                                ¡Gracias! Hemos recibido tu solicitud. Te contactaremos pronto para confirmar.
-                            </div>
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                <input type="text" placeholder="Nombre" required class="bg-gray-800 border border-gray-700 rounded-lg p-3 w-full focus:outline-none focus:ring-2 focus:ring-amber-500">
-                                <input type="tel" placeholder="Teléfono" required class="bg-gray-800 border border-gray-700 rounded-lg p-3 w-full focus:outline-none focus:ring-2 focus:ring-amber-500">
-                            </div>
-                            <div class="mt-4">
-                                <input type="email" placeholder="Email" required class="bg-gray-800 border border-gray-700 rounded-lg p-3 w-full focus:outline-none focus:ring-2 focus:ring-amber-500">
-                            </div>
-                            <div class="mt-4">
-                                <select required class="bg-gray-800 border border-gray-700 rounded-lg p-3 w-full focus:outline-none focus:ring-2 focus:ring-amber-500">
-                                    <option value="" disabled selected>Selecciona un servicio...</option>
-                                    <option value="corte">Corte Clásico (20€)</option>
-                                    <option value="barba">Arreglo de Barba (15€)</option>
-                                    <option value="pack">Pack Completo (30€)</option>
-                                </select>
-                            </div>
-                            <div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
-                                <input type="date" required class="bg-gray-800 border border-gray-700 rounded-lg p-3 w-full focus:outline-none focus:ring-2 focus:ring-amber-500" style="color-scheme: dark;">
-                                <input type="time" required class="bg-gray-800 border border-gray-700 rounded-lg p-3 w-full focus:outline-none focus:ring-2 focus:ring-amber-500" style="color-scheme: dark;">
-                            </div>
-                            <div class="mt-6">
-                                <button type="submit" class="w-full bg-amber-500 hover:bg-amber-600 text-gray-900 font-bold py-3 px-8 rounded-lg text-lg transition duration-300">
-                                    Solicitar Cita
-                                </button>
-                            </div>
-                        </form>
-                    </div>
-                    <!-- Map & Info -->
-                    <div id="contacto">
-                        <h3 class="text-3xl font-display text-white tracking-wider">Visítanos</h3>
-                        <p class="mt-2 text-gray-400">Estamos en el corazón de la ciudad, listos para atenderte.</p>
-                        <div class="mt-6">
-                            <p class="font-bold">Dirección:</p>
-                            <p>Calle Falsa 123, 08001, Barcelona</p>
-                        </div>
-                        <div class="mt-4">
-                            <p class="font-bold">Horario:</p>
-                            <p>Lunes a Viernes: 10:00 - 20:00</p>
-                            <p>Sábados: 10:00 - 14:00</p>
-                        </div>
-                        <div class="mt-4">
-                            <p class="font-bold">Teléfono:</p>
-                            <p>+34 900 123 456</p>
-                        </div>
-                        <div class="mt-6 rounded-lg overflow-hidden border-2 border-amber-500">
-                           <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.086580962381!2d-122.4194154846813!3d37.77492957975904!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085808c5b5a7c7f%3A0x4a501367f076adff!2sSan%20Francisco%20City%20Hall!5e0!3m2!1ses!2ses!4v1678886543210!5m2!1ses!2ses" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                        </div>
-                    </div>
+                <div class="text-center">
+                    <h2 class="text-5xl font-display text-white tracking-wider uppercase">Reserva Tu Cita</h2>
+                    <p class="text-gray-400 mt-4 max-w-2xl mx-auto">¿Listo para tu transformación? Completa el formulario y asegura tu hora.</p>
                 </div>
+                <form @submit.prevent="submitForm" class="max-w-2xl mx-auto mt-10">
+                    <div x-show="successMessage" class="bg-green-600 text-white p-4 text-center mb-4">
+                        ¡Gracias! Tu solicitud ha sido enviada. Te contactaremos a la brevedad.
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <input type="text" placeholder="NOMBRE" required class="bg-transparent border-b-2 border-gray-600 p-3 w-full focus:outline-none focus:border-white transition">
+                        <input type="tel" placeholder="TELÉFONO" required class="bg-transparent border-b-2 border-gray-600 p-3 w-full focus:outline-none focus:border-white transition">
+                    </div>
+                    <div class="mt-6">
+                        <select required class="bg-black border-b-2 border-gray-600 p-3 w-full focus:outline-none focus:border-white transition">
+                            <option value="" disabled selected>SELECCIONA UN SERVICIO...</option>
+                            <option value="corte">Corte de Cabello ($12.000)</option>
+                            <option value="corte_barba">Corte + Barba ($16.000)</option>
+                            <option value="platinado">Platinado Global ($70.000)</option>
+                            <option value="otro">Otro (Especificar en mensaje)</option>
+                        </select>
+                    </div>
+                    <div class="mt-6">
+                        <textarea placeholder="MENSAJE (OPCIONAL)" rows="3" class="bg-transparent border-b-2 border-gray-600 p-3 w-full focus:outline-none focus:border-white transition"></textarea>
+                    </div>
+                    <div class="mt-8 text-center">
+                        <button type="submit" class="btn-primary w-full sm:w-auto">
+                            Enviar Solicitud
+                        </button>
+                    </div>
+                </form>
             </div>
         </section>
     </main>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 border-t border-gray-800">
-        <div class="container mx-auto px-6 py-6 text-center text-gray-500">
-            <p>&copy; 2024 El Rincón del Caballero. Todos los derechos reservados.</p>
-            <p class="text-sm">Diseñado y Desarrollado por [Tu Nombre/Agencia]</p>
+    <footer class="bg-black border-t border-gray-800">
+        <div class="container mx-auto px-6 py-8 text-center text-gray-500">
+            <h3 class="font-display text-2xl text-white tracking-wider">MB STUDIOS</h3>
+            <p class="mt-4">Calle Falsa 123, Coquimbo, Chile</p>
+            <p>+56 9 1234 5678</p>
+            <div class="mt-6">
+                <a href="https://www.instagram.com/michael.the.barber_studios/" target="_blank" class="inline-block hover:text-white transition">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.011 3.584-.069 4.85c-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.584-.012-4.85-.07c-3.252-.148-4.771-1.691-4.919-4.919-.058-1.265-.069-1.645-.069-4.85s.011-3.584.069-4.85c.149-3.225 1.664-4.771 4.919-4.919 1.266-.058 1.644-.07 4.85-.07zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948s.014 3.667.072 4.947c.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072s3.667-.014 4.947-.072c4.358-.2 6.78-2.618 6.98-6.98.059-1.281.073-1.689.073-4.948s-.014-3.667-.072-4.947c-.2-4.358-2.618-6.78-6.98-6.98-1.281-.058-1.689-.072-4.948-.072zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.162 6.162 6.162 6.162-2.759 6.162-6.162-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4s1.791-4 4-4 4 1.79 4 4-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.441 1.441 1.441 1.441-.645 1.441-1.441-.645-1.44-1.441-1.44z"/></svg>
+                </a>
+            </div>
+            <p class="text-xs mt-6">© 2025 Michael The Barber Studios. Todos los derechos reservados.</p>
+            <p class="text-xs mt-1">Diseñado por [Tu Nombre/Agencia]</p>
         </div>
     </footer>
 
     <script>
-        // Simple script for form simulation
+        // JS for booking form simulation
         function bookingForm() {
             return {
                 successMessage: false,
-                submitForm() {
-                    // This is a simulation. In a real project, you would send data to a server.
-                    // For example: using fetch() to post to a backend endpoint.
-                    console.log('Form data submitted (simulation)');
-                    this.successMessage = true;
-                    // Hide the message after a few seconds
-                    setTimeout(() => {
-                        this.successMessage = false;
-                    }, 5000);
+                submitForm(event) {
+                    const form = event.target;
+                    if (form.checkValidity()) {
+                        event.preventDefault();
+                        console.log('Form data submitted (simulation)');
+                        this.successMessage = true;
+                        form.reset();
+                        setTimeout(() => { this.successMessage = false; }, 5000);
+                    }
                 }
             }
         }
+
+        // JS for scroll animations
+        document.addEventListener('DOMContentLoaded', () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.animated').forEach(el => {
+                observer.observe(el);
+            });
+        });
     </script>
 
 </body>
 </html>
+
+
