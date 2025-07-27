@@ -1,0 +1,97 @@
+/* Estilos base para fuentes y colores definidos en el HTML con Tailwind */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #000000;
+    color: #E5E7EB; /* text-gray-200 */
+}
+
+h1, h2, h3, .font-display {
+    font-family: 'Oswald', sans-serif;
+}
+
+/* Clases de componentes reutilizables */
+.btn-primary {
+    @apply bg-white text-black font-bold py-3 px-8 uppercase tracking-wider rounded-sm hover:bg-gray-300 transition duration-300 transform hover:scale-105;
+}
+.btn-secondary {
+    @apply bg-transparent border-2 border-white text-white font-bold py-3 px-8 uppercase tracking-wider rounded-sm hover:bg-white hover:text-black transition duration-300 transform hover:scale-105;
+}
+
+.section-title {
+    @apply text-4xl md:text-5xl font-display text-white tracking-wider uppercase;
+}
+
+.section-divider {
+    @apply h-1 w-24 bg-white mx-auto mt-4 mb-12;
+}
+
+/* Estilos de formulario */
+.form-input {
+    @apply bg-transparent border-b-2 border-gray-600 p-3 w-full focus:outline-none focus:border-white transition rounded-none appearance-none;
+}
+
+.form-select {
+    @apply bg-black border-2 border-gray-600 p-3 w-full focus:outline-none focus:border-white transition rounded-lg appearance-none;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+    background-position: right 0.5rem center;
+    background-repeat: no-repeat;
+    background-size: 1.5em 1.5em;
+}
+
+/* Estilos de la sección Hero */
+.hero-video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+#heroVideo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.hero-overlay {
+    background-color: rgba(0,0,0,0.7);
+}
+
+/* Estilos de imágenes de galería y destacados */
+.img-zoom {
+    @apply w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500;
+}
+.img-overlay {
+    @apply absolute inset-0 bg-black bg-opacity-40 flex items-end p-4 md:p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500;
+}
+.img-title {
+    @apply text-xl md:text-2xl text-white font-display uppercase;
+}
+
+
+/* Animaciones al hacer scroll */
+.animated {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.animated.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Animación de entrada del Hero */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.fade-in-up {
+    animation: fadeInUp 1s ease-out 0.5s forwards;
+    opacity: 0;
+}
