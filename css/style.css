@@ -1,4 +1,4 @@
-/* Estilos base para fuentes y colores definidos en el HTML con Tailwind */
+/* Estilos base para fuentes y colores */
 body {
     font-family: 'Poppins', sans-serif;
     background-color: #000000;
@@ -11,32 +11,102 @@ h1, h2, .font-display {
 
 /* Clases de componentes reutilizables */
 .btn-primary {
-    @apply bg-white text-black font-bold py-3 px-8 uppercase tracking-wider rounded-sm hover:bg-gray-300 transition duration-300 transform hover:scale-105;
+    background-color: #FFFFFF;
+    color: #000000;
+    font-weight: 700;
+    padding: 0.75rem 2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-radius: 0.125rem;
+    transition: all 0.3s ease-in-out;
+    display: inline-block;
 }
+.btn-primary:hover {
+    background-color: #D1D5DB; /* gray-300 */
+    transform: scale(1.05);
+}
+
 .btn-secondary {
-    @apply bg-transparent border-2 border-white text-white font-bold py-3 px-8 uppercase tracking-wider rounded-sm hover:bg-white hover:text-black transition duration-300 transform hover:scale-105;
+    background-color: transparent;
+    border: 2px solid #FFFFFF;
+    color: #FFFFFF;
+    font-weight: 700;
+    padding: 0.75rem 2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-radius: 0.125rem;
+    transition: all 0.3s ease-in-out;
+    display: inline-block;
+}
+.btn-secondary:hover {
+    background-color: #FFFFFF;
+    color: #000000;
+    transform: scale(1.05);
 }
 
 .section-title {
-    @apply text-4xl md:text-5xl font-display text-white tracking-wider uppercase;
+    font-size: 2.25rem; /* text-4xl */
+    line-height: 2.5rem;
+    font-family: 'Oswald', sans-serif;
+    color: #FFFFFF;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+@media (min-width: 768px) {
+    .section-title {
+        font-size: 3rem; /* md:text-5xl */
+        line-height: 1;
+    }
 }
 
 .section-divider {
-    @apply h-1 w-24 bg-white mx-auto mt-4 mb-12;
+    height: 0.25rem;
+    width: 6rem;
+    background-color: #FFFFFF;
+    margin: 1rem auto 3rem auto;
 }
 
-/* Estilos de formulario */
+/* --- ESTILOS CORREGIDOS PARA EL FORMULARIO --- */
 .form-input {
-    @apply bg-transparent border-b-2 border-gray-600 p-3 w-full focus:outline-none focus:border-white transition rounded-none appearance-none;
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid #4B5563; /* gray-600 */
+    padding: 0.75rem;
+    width: 100%;
+    color: #E5E7EB;
+    transition: border-color 0.3s ease-in-out;
+    border-radius: 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+.form-input:focus {
+    outline: none;
+    border-color: #FFFFFF;
 }
 
 .form-select {
-    @apply bg-black border-2 border-gray-600 p-3 w-full focus:outline-none focus:border-white transition rounded-lg appearance-none;
+    background-color: #000000;
+    border: 2px solid #4B5563; /* gray-600 */
+    padding: 0.75rem;
+    width: 100%;
+    color: #E5E7EB;
+    transition: border-color 0.3s ease-in-out;
+    border-radius: 0.5rem;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
     background-position: right 0.5rem center;
     background-repeat: no-repeat;
     background-size: 1.5em 1.5em;
 }
+.form-select:focus {
+    outline: none;
+    border-color: #FFFFFF;
+}
+/* --- FIN DE ESTILOS CORREGIDOS --- */
+
 
 /* Estilos de la sección Hero */
 .hero-video-container {
@@ -59,19 +129,58 @@ h1, h2, .font-display {
 
 /* Estilos de imágenes de galería y destacados */
 .img-zoom {
-    @apply w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease-in-out;
 }
-.img-overlay {
-    @apply absolute inset-0 bg-black bg-opacity-40 flex items-end p-4 md:p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500;
-}
-.img-title {
-    @apply text-xl md:text-2xl text-white font-display uppercase;
+.group:hover .img-zoom {
+    transform: scale(1.10);
 }
 
-/* --- NUEVOS ESTILOS PARA LA SECCIÓN DE SERVICIOS --- */
+.img-overlay {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0,0,0,0.4);
+    display: flex;
+    align-items: flex-end;
+    padding: 1rem;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+.group:hover .img-overlay {
+    opacity: 1;
+}
+@media (min-width: 768px) {
+    .img-overlay {
+        padding: 1.5rem;
+    }
+}
+
+.img-title {
+    font-size: 1.25rem; /* text-xl */
+    line-height: 1.75rem;
+    color: #FFFFFF;
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+}
+@media (min-width: 768px) {
+    .img-title {
+        font-size: 1.5rem; /* md:text-2xl */
+        line-height: 2rem;
+    }
+}
+
+/* Estilos para la sección de servicios */
 .service-category-title {
     font-family: 'Alfa Slab One', serif;
-    @apply text-3xl text-white tracking-widest border-b-2 border-gray-700 pb-2 mb-6;
+    font-size: 1.875rem; /* text-3xl */
+    line-height: 2.25rem;
+    color: #FFFFFF;
+    letter-spacing: 0.05em;
+    border-bottom: 2px solid #4B5563; /* gray-700 */
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
 }
 
 .service-item {
@@ -82,26 +191,23 @@ h1, h2, .font-display {
 }
 
 .service-name {
-    /* El nombre del servicio */
     padding-right: 0.75rem;
-    background-color: #1f2937; /* bg-gray-800 or bg-gray-900 depending on the section */
+    background-color: #1f2937; /* bg-gray-900 */
     z-index: 1;
 }
 
 .service-line {
-    /* La línea de puntos */
     flex-grow: 1;
-    border-bottom: 2px dotted #4B5563; /* text-gray-600 */
+    border-bottom: 2px dotted #4B5563; /* gray-600 */
     transform: translateY(-5px);
 }
 
 .service-price {
-    /* El precio del servicio */
     padding-left: 0.75rem;
-    background-color: #1f2937; /* bg-gray-800 or bg-gray-900 depending on the section */
+    background-color: #1f2937; /* bg-gray-900 */
     z-index: 1;
-    font-weight: 600; /* font-semibold */
-    color: #FFFFFF; /* text-white */
+    font-weight: 600;
+    color: #FFFFFF;
 }
 
 /* Animaciones al hacer scroll */
