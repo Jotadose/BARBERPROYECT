@@ -1,238 +1,166 @@
-/* Estilos base para fuentes y colores */
+/* --- CONFIGURACIÓN BASE --- */
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: #000000;
-    color: #E5E7EB; /* text-gray-200 */
+    background-color: #111111;
+    color: #D1D5DB; /* text-gray-300 */
+    background-image: url('https://www.transparenttextures.com/patterns/dark-denim-3.png');
+    font-weight: 300;
 }
 
-h1, h2, .font-display {
-    font-family: 'Oswald', sans-serif;
-}
-
-/* Clases de componentes reutilizables */
-.btn-primary {
-    background-color: #FFFFFF;
-    color: #000000;
-    font-weight: 700;
-    padding: 0.75rem 2rem;
+/* --- TIPOGRAFÍA --- */
+h1, h2, h3, .font-display {
+    font-family: 'Anton', sans-serif;
+    color: #FFFFFF;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    border-radius: 0.125rem;
+}
+
+.section-title {
+    font-size: 3rem; /* 48px */
+    line-height: 1.1;
+}
+@media (min-width: 768px) {
+    .section-title {
+        font-size: 5rem; /* 80px */
+    }
+}
+
+/* --- COLORES Y FONDOS --- */
+.bg-brand-dark {
+    background-color: #111111;
+}
+.bg-brand-dark-alt {
+    background-color: #181818;
+}
+.accent-color {
+    color: #D4AF37; /* Tono dorado/bronce */
+}
+
+/* --- COMPONENTES REUTILIZABLES --- */
+.btn-primary {
+    background-color: #D4AF37;
+    color: #111111;
+    font-weight: 600;
+    padding: 0.8rem 2.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    border-radius: 2px;
     transition: all 0.3s ease-in-out;
     display: inline-block;
 }
 .btn-primary:hover {
-    background-color: #D1D5DB; /* gray-300 */
-    transform: scale(1.05);
-}
-
-.btn-secondary {
-    background-color: transparent;
-    border: 2px solid #FFFFFF;
-    color: #FFFFFF;
-    font-weight: 700;
-    padding: 0.75rem 2rem;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    border-radius: 0.125rem;
-    transition: all 0.3s ease-in-out;
-    display: inline-block;
-}
-.btn-secondary:hover {
     background-color: #FFFFFF;
-    color: #000000;
-    transform: scale(1.05);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
 }
 
-.section-title {
-    font-size: 2.25rem; /* text-4xl */
-    line-height: 2.5rem;
-    font-family: 'Oswald', sans-serif;
+.nav-link {
+    position: relative;
+    padding-bottom: 0.25rem;
+    transition: color 0.3s;
+}
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #D4AF37;
+    transition: width 0.3s ease-in-out;
+}
+.nav-link:hover {
     color: #FFFFFF;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
 }
-@media (min-width: 768px) {
-    .section-title {
-        font-size: 3rem; /* md:text-5xl */
-        line-height: 1;
-    }
-}
-
-.section-divider {
-    height: 0.25rem;
-    width: 6rem;
-    background-color: #FFFFFF;
-    margin: 1rem auto 3rem auto;
-}
-
-/* --- ESTILOS CORREGIDOS PARA EL FORMULARIO --- */
-.form-input {
-    background-color: transparent;
-    border: none;
-    border-bottom: 2px solid #4B5563; /* gray-600 */
-    padding: 0.75rem;
+.nav-link:hover::after {
     width: 100%;
-    color: #E5E7EB;
-    transition: border-color 0.3s ease-in-out;
-    border-radius: 0;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-}
-.form-input:focus {
-    outline: none;
-    border-color: #FFFFFF;
 }
 
-.form-select {
-    background-color: #000000;
-    border: 2px solid #4B5563; /* gray-600 */
-    padding: 0.75rem;
-    width: 100%;
-    color: #E5E7EB;
-    transition: border-color 0.3s ease-in-out;
-    border-radius: 0.5rem;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
-    background-position: right 0.5rem center;
-    background-repeat: no-repeat;
-    background-size: 1.5em 1.5em;
-}
-.form-select:focus {
-    outline: none;
-    border-color: #FFFFFF;
-}
-/* --- FIN DE ESTILOS CORREGIDOS --- */
+/* --- SECCIONES ESPECÍFICAS --- */
 
-
-/* Estilos de la sección Hero */
+/* Hero */
+.hero-overlay {
+    background: linear-gradient(to top, rgba(17,17,17,1) 0%, rgba(17,17,17,0.5) 50%, rgba(17,17,17,1) 100%);
+}
 .hero-video-container {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
     overflow: hidden;
     z-index: -1;
 }
 #heroVideo {
-    width: 100%;
-    height: 100%;
+    width: 100%; height: 100%;
     object-fit: cover;
-}
-.hero-overlay {
-    background-color: rgba(0,0,0,0.7);
+    opacity: 0.3;
 }
 
-/* Estilos de imágenes de galería y destacados */
-.img-zoom {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s ease-in-out;
-}
-.group:hover .img-zoom {
-    transform: scale(1.10);
-}
-
-.img-overlay {
-    position: absolute;
-    inset: 0;
-    background-color: rgba(0,0,0,0.4);
-    display: flex;
-    align-items: flex-end;
-    padding: 1rem;
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out;
-}
-.group:hover .img-overlay {
-    opacity: 1;
-}
-@media (min-width: 768px) {
-    .img-overlay {
-        padding: 1.5rem;
-    }
-}
-
-.img-title {
-    font-size: 1.25rem; /* text-xl */
-    line-height: 1.75rem;
-    color: #FFFFFF;
-    font-family: 'Oswald', sans-serif;
-    text-transform: uppercase;
-}
-@media (min-width: 768px) {
-    .img-title {
-        font-size: 1.5rem; /* md:text-2xl */
-        line-height: 2rem;
-    }
-}
-
-/* Estilos para la sección de servicios */
+/* Servicios (Menu) */
 .service-category-title {
-    font-family: 'Alfa Slab One', serif;
-    font-size: 1.875rem; /* text-3xl */
-    line-height: 2.25rem;
-    color: #FFFFFF;
-    letter-spacing: 0.05em;
-    border-bottom: 2px solid #4B5563; /* gray-700 */
+    font-family: 'Anton', sans-serif;
+    font-size: 1.5rem;
+    color: #D4AF37;
+    letter-spacing: 0.1em;
+    border-bottom: 1px solid #4B5563;
     padding-bottom: 0.5rem;
     margin-bottom: 1.5rem;
 }
-
 .service-item {
     display: flex;
     align-items: baseline;
-    font-size: 1.125rem; /* text-lg */
-    color: #D1D5DB; /* text-gray-300 */
+    font-size: 1.125rem;
 }
-
 .service-name {
-    padding-right: 0.75rem;
-    background-color: #1f2937; /* bg-gray-900 */
+    background-color: #181818;
+    padding-right: 0.5rem;
     z-index: 1;
 }
-
 .service-line {
     flex-grow: 1;
-    border-bottom: 2px dotted #4B5563; /* gray-600 */
-    transform: translateY(-5px);
+    border-bottom: 1px dotted #4B5563;
+    transform: translateY(-4px);
 }
-
 .service-price {
-    padding-left: 0.75rem;
-    background-color: #1f2937; /* bg-gray-900 */
+    background-color: #181818;
+    padding-left: 0.5rem;
     z-index: 1;
     font-weight: 600;
     color: #FFFFFF;
 }
 
-/* Animaciones al hacer scroll */
+/* Formulario */
+.form-input, .form-select {
+    background-color: transparent;
+    border: 1px solid #4B5563;
+    padding: 0.75rem 1rem;
+    width: 100%;
+    color: #E5E7EB;
+    transition: all 0.3s;
+    border-radius: 2px;
+}
+.form-input:focus, .form-select:focus {
+    outline: none;
+    border-color: #D4AF37;
+    background-color: #181818;
+}
+
+/* Animaciones */
 .animated {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(40px);
     transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 .animated.is-visible {
     opacity: 1;
     transform: translateY(0);
 }
-
-/* Animación de entrada del Hero */
+.fade-in-up {
+    animation: fadeInUp 1s ease-out 0.5s forwards;
+    opacity: 0;
+}
 @keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
     to {
         opacity: 1;
         transform: translateY(0);
     }
-}
-.fade-in-up {
-    animation: fadeInUp 1s ease-out 0.5s forwards;
-    opacity: 0;
 }
