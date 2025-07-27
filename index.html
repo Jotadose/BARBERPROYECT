@@ -143,6 +143,46 @@
                 </div>
             </div>
         </section>
+
+        <!-- Booking Section -->
+        <section id="reserva" class="py-20 bg-black animated">
+            <div class="container mx-auto px-6">
+                <div class="text-center">
+                    <h2 class="section-title">Reserva Tu Cita</h2>
+                    <p class="text-gray-400 mt-4 max-w-2xl mx-auto">¿Listo para tu transformación? Completa el formulario y asegura tu hora. Recibirás una confirmación por WhatsApp o email.</p>
+                </div>
+                <!-- Formulario funcional con Formspree -->
+                <form id="contact-form" action="https://formspree.io/f/TU_ID_DE_FORMULARIO" method="POST" class="max-w-2xl mx-auto mt-10">
+                    <div id="form-success" class="hidden bg-green-600 text-white p-4 text-center mb-4 rounded-lg">
+                        ¡Gracias! Tu solicitud ha sido enviada. Te contactaremos a la brevedad.
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <input type="text" name="name" placeholder="NOMBRE" required class="form-input">
+                        <input type="tel" name="phone" placeholder="TELÉFONO / WHATSAPP" required class="form-input">
+                    </div>
+                    <div class="mt-6">
+                        <input type="email" name="email" placeholder="EMAIL" required class="form-input">
+                    </div>
+                    <div class="mt-6">
+                        <select name="service" required class="form-select">
+                            <option value="" disabled selected>SELECCIONA UN SERVICIO...</option>
+                            <option value="Corte de Cabello ($12.000)">Corte de Cabello ($12.000)</option>
+                            <option value="Corte + Barba ($16.000)">Corte + Barba ($16.000)</option>
+                            <option value="Platinado Global ($70.000)">Platinado Global ($70.000)</option>
+                            <option value="Otro">Otro (Especificar en mensaje)</option>
+                        </select>
+                    </div>
+                    <div class="mt-6">
+                        <textarea name="message" placeholder="MENSAJE (OPCIONAL)" rows="3" class="form-input h-auto"></textarea>
+                    </div>
+                    <div class="mt-8 text-center">
+                        <button type="submit" class="btn-primary w-full sm:w-auto">
+                            Enviar Solicitud
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </section>
     </main>
 
     <!-- Footer -->
