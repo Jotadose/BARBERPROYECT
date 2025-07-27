@@ -4,31 +4,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- SEO & Metatags -->
-    <title>Michael The Barber Studios - Barbería de Autor en Coquimbo</title>
-    <meta name="description" content="Experimenta la barbería de autor en Coquimbo. Michael The Barber Studios ofrece cortes, fades y colorimetría con un estilo inigualable. Reserva tu cita.">
-    <meta name="keywords" content="barberia, peluqueria hombre, corte de pelo, fade, michael the barber, coquimbo, la serena, barber shop">
-    <link rel="canonical" href="https://barberproyect.vercel.app/">
+    <!-- SEO Básico y Título -->
+    <title>Michael The Barber Studios - Barbería Profesional en Coquimbo</title>
+    <meta name="description" content="Servicios de barbería de alto estándar en Coquimbo. Especialistas en cortes, fades, colorimetría y diseño. ¡Reserva tu cita online y vive la experiencia!">
+    <meta name="keywords" content="barberia, peluqueria hombre, corte de pelo, fade, michael the barber, coquimbo, la serena">
+    <link rel="canonical" href="https://barberproyect.vercel.app/"> <!-- Reemplaza con tu dominio final -->
+
+    <!-- Open Graph para Redes Sociales -->
     <meta property="og:title" content="Michael The Barber Studios - Estilo y Precisión">
-    <meta property="og:description" content="La barbería de autor de Coquimbo. Descubre nuestros trabajos y reserva tu cita.">
-    <meta property="og:image" content="https://barberproyect.vercel.app/img/IMG_5984.JPG">
-    <meta property="og:url" content="https://barberproyect.vercel.app/">
+    <meta property="og:description" content="La mejor barbería de Coquimbo. Descubre nuestros trabajos y reserva tu cita.">
+    <meta property="og:image" content="https://barberproyect.vercel.app/img/IMG_5984.JPG"> <!-- URL absoluta de tu mejor imagen -->
+    <meta property="og:url" content="https://barberproyect.vercel.app/"> <!-- Reemplaza con tu dominio final -->
     <meta property="og:type" content="website">
+    <meta property="og:locale" content="es_ES">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Michael The Barber Studios - Estilo y Precisión">
+    <meta name="twitter:description" content="La mejor barbería de Coquimbo. Descubre nuestros trabajos y reserva tu cita.">
+    <meta name="twitter:image" content="https://barberproyect.vercel.app/img/IMG_5984.JPG"> <!-- URL absoluta de tu mejor imagen -->
+
+    <!-- Favicon -->
     <link rel="icon" href="/img/IMG_0177.JPG" type="image/jpeg">
 
-    <!-- Scripts -->
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Fonts -->
+    <!-- Google Fonts: Oswald, Poppins & Alfa Slab One -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Oswald:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     
     <!-- CSS Personalizado -->
     <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Google Analytics (GA4) - Reemplaza con tu ID -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
 </head>
 
-<body class="bg-brand-dark text-gray-300 font-sans">
+<body class="bg-black text-gray-200 font-sans">
 
     <!-- Header -->
     <header class="bg-black/80 backdrop-blur-sm fixed top-0 left-0 right-0 z-50">
@@ -37,15 +57,16 @@
                 <img src="/img/IMG_0177.JPG" class="h-16 w-auto object-contain" alt="Logo de Michael The Barber Studios">
             </a>
             <nav class="hidden md:flex space-x-8 uppercase text-sm tracking-widest" aria-label="Navegación principal">
-                <a href="#destacados" class="nav-link">Trabajos</a>
-                <a href="#servicios" class="nav-link">Servicios</a>
-                <a href="#equipo" class="nav-link">Equipo</a>
-                <a href="#reserva" class="nav-link">Reserva</a>
+                <a href="#destacados" class="hover:text-white transition duration-300">Trabajos</a>
+                <a href="#servicios" class="hover:text-white transition duration-300">Servicios</a>
+                <a href="#equipo" class="hover:text-white transition duration-300">Equipo</a>
+                <a href="#reserva" class="hover:text-white transition duration-300">Reserva</a>
             </nav>
             <button id="menu-btn" class="md:hidden text-white focus:outline-none z-50" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-menu">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path id="menu-open-icon" d="M4 6h16M4 12h16m-7 6h7"></path><path id="menu-close-icon" class="hidden" d="M6 18L18 6M6 6l12 12"></path></svg>
             </button>
         </div>
+        <!-- Menú Móvil -->
         <div id="mobile-menu" class="hidden md:hidden absolute top-0 left-0 w-full h-screen bg-black flex flex-col items-center justify-center space-y-8">
             <a href="#destacados" class="mobile-link text-2xl uppercase">Trabajos</a>
             <a href="#servicios" class="mobile-link text-2xl uppercase">Servicios</a>
@@ -64,69 +85,183 @@
                 </video>
             </div>
             <div class="relative z-10 fade-in-up px-4">
-                <h1 class="text-6xl md:text-8xl lg:text-9xl font-display uppercase tracking-wider">Estilo & Precisión</h1>
-                <p class="text-lg md:text-xl mt-4 max-w-2xl mx-auto font-light">La barbería de autor que define tu identidad. Bienvenido a Michael The Barber Studios.</p>
-                <div class="mt-8">
-                    <a href="#reserva" class="btn-primary">Reservar Cita</a>
+                <h1 class="text-5xl md:text-7xl lg:text-8xl font-display tracking-wider uppercase">Michael The Barber</h1>
+                <h2 class="text-2xl md:text-4xl font-display tracking-widest uppercase text-gray-400 mt-2">Studios</h2>
+                <p class="text-lg md:text-xl mt-6 max-w-2xl mx-auto font-light">Servicios de barbería de alto estándar en Coquimbo, dedicados al trabajo de imagen masculino.</p>
+                <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <a href="#reserva" class="btn-primary w-full sm:w-auto">Reservar Cita</a>
+                    <a href="#servicios" class="btn-secondary w-full sm:w-auto">Ver Servicios</a>
                 </div>
             </div>
         </section>
 
         <!-- Featured Work Section -->
-        <section id="destacados" class="py-24 animated">
-            <div class="container mx-auto px-6">
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                    <div class="text-center lg:text-left">
-                        <h2 class="section-title">Trabajos Destacados</h2>
-                        <p class="mt-4 text-lg text-gray-400">Cada corte es una declaración. Fusionamos técnica clásica con tendencias de vanguardia para crear un estilo que es únicamente tuyo.</p>
+        <section id="destacados" class="py-20 bg-black animated">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="section-title">Trabajos Destacados</h2>
+                <div class="section-divider"></div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8">
+                    <div class="group relative overflow-hidden rounded-lg">
+                        <img loading="lazy" decoding="async" src="/img/barberia1-trabajodest.webp" alt="Hombre con un corte de pelo estilo fade y barba perfilada." class="img-zoom">
+                        <div class="img-overlay"><h3 class="img-title">Fades Perfectos</h3></div>
                     </div>
-                    <div class="grid grid-cols-2 gap-4">
-                        <img loading="lazy" src="/img/IMG_5984.JPG" alt="Hombre con un corte de pelo estilo fade y barba perfilada." class="rounded-lg shadow-lg aspect-[3/4] object-cover">
-                        <img loading="lazy" src="/img/IMG_8078.JPG" alt="Joven con el pelo teñido de un color fantasía platinado." class="rounded-lg shadow-lg aspect-[3/4] object-cover mt-8">
+                    <div class="group relative overflow-hidden rounded-lg">
+                        <img loading="lazy" decoding="async" src="/img/barberia2-trabajodest.avif" alt="Joven con el pelo teñido de un color fantasía platinado." class="img-zoom">
+                        <div class="img-overlay"><h3 class="img-title">Colorimetría Pro</h3></div>
+                    </div>
+                    <div class="group relative overflow-hidden rounded-lg">
+                        <img loading="lazy" decoding="async" src="/img/barberia3-trabajodest.avif" alt="Corte de pelo con un diseño de líneas y formas geométricas." class="img-zoom">
+                        <div class="img-overlay"><h3 class="img-title">Diseño Freestyle</h3></div>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Services Section -->
-        <section id="servicios" class="py-24 bg-brand-dark-alt animated">
-            <div class="container mx-auto px-6">
-                <div class="text-center">
-                    <h2 class="section-title">Nuestros Rituales</h2>
-                    <p class="mt-4 text-lg text-gray-400 max-w-3xl mx-auto">Más que servicios, son experiencias diseñadas para el hombre moderno. Calidad, precisión y los mejores productos del mercado.</p>
-                </div>
-                <div class="max-w-4xl mx-auto mt-16 space-y-12">
-                     <!-- Contenido de servicios se mantiene igual -->
+        <section id="servicios" class="py-20 bg-gray-900 animated">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="section-title">Nuestros Servicios</h2>
+                <div class="section-divider"></div>
+                <div class="max-w-4xl mx-auto text-left space-y-12">
+                    <div>
+                        <h3 class="service-category-title">BARBERÍA</h3>
+                        <div class="space-y-4">
+                            <div class="service-item"><span class="service-name">Corte de Cabello</span><span class="service-line"></span><span class="service-price">$12.000</span></div>
+                            <div class="service-item"><span class="service-name">Corte de Cabello + Barba</span><span class="service-line"></span><span class="service-price">$16.000</span></div>
+                            <div class="service-item"><span class="service-name">Corte + Barba + Limpieza Facial</span><span class="service-line"></span><span class="service-price">$22.000</span></div>
+                            <div class="service-item"><span class="service-name">Barba</span><span class="service-line"></span><span class="service-price">$6.000</span></div>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="service-category-title">COLORIMETRÍA</h3>
+                        <div class="space-y-4">
+                            <div class="service-item"><span class="service-name">Bloque de Color</span><span class="service-line"></span><span class="service-price">$60.000</span></div>
+                            <div class="service-item"><span class="service-name">Platinado Global</span><span class="service-line"></span><span class="service-price">$70.000</span></div>
+                            <div class="service-item"><span class="service-name">Visos</span><span class="service-line"></span><span class="service-price">$60.000</span></div>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="service-category-title">EXTRAS</h3>
+                        <div class="space-y-4">
+                            <div class="service-item"><span class="service-name">Ondulación Permanente</span><span class="service-line"></span><span class="service-price">$55.000</span></div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
         
         <!-- Team Section -->
-        <section id="equipo" class="py-24 animated">
+        <section id="equipo" class="py-20 bg-black animated">
             <div class="container mx-auto px-6 text-center">
-                <h2 class="section-title">Los Artistas</h2>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-5xl mx-auto mt-16">
-                    <!-- Contenido del equipo se mantiene igual -->
+                <h2 class="section-title">Nuestro Equipo</h2>
+                <div class="section-divider"></div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-5xl mx-auto">
+                    <div class="text-center group"><img loading="lazy" decoding="async" src="/img/IMG_5984.JPG" alt="Retrato del barbero Michael" class="w-48 h-48 rounded-full mx-auto border-4 border-white object-cover transform group-hover:scale-110 transition-transform duration-300"><h3 class="mt-5 text-2xl font-display text-white uppercase">Michael The Barber</h3><p class="text-gray-400">Fundador / Especialista en Color</p></div>
+                    <div class="text-center group"><img loading="lazy" decoding="async" src="/img/barbero2.avif" alt="Retrato del barbero Aleee Cut" class="w-48 h-48 rounded-full mx-auto border-4 border-white object-cover transform group-hover:scale-110 transition-transform duration-300"><h3 class="mt-5 text-2xl font-display text-white uppercase">Aleee Cut</h3><p class="text-gray-400">Experto en Fades</p></div>
+                    <div class="text-center group"><img loading="lazy" decoding="async" src="/img/barbero3.avif" alt="Retrato del barbero Kevo Cuts" class="w-48 h-48 rounded-full mx-auto border-4 border-white object-cover transform group-hover:scale-110 transition-transform duration-300"><h3 class="mt-5 text-2xl font-display text-white uppercase">Kevo Cuts</h3><p class="text-gray-400">Especialista en Diseño Freestyle</p></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonial Section -->
+        <section id="testimonios" class="py-20 bg-gray-900 animated">
+            <div class="container mx-auto px-6 text-center max-w-3xl">
+                <h2 class="section-title">Qué Dicen Nuestros Clientes</h2>
+                <div class="section-divider"></div>
+                <div class="text-white italic text-xl md:text-2xl">
+                    <p>"El mejor corte que me han hecho en años. Michael no solo es un barbero, es un artista. El ambiente del estudio es increíble y la atención, de primera. 100% recomendado."</p>
+                    <cite class="block not-italic text-gray-400 mt-4">- Cliente Satisfecho</cite>
                 </div>
             </div>
         </section>
 
         <!-- Booking & Map Section -->
-        <section id="reserva" class="py-24 bg-brand-dark-alt animated">
+        <section id="reserva" class="py-20 bg-black animated">
             <div class="container mx-auto px-6">
                 <div class="text-center">
-                    <h2 class="section-title">Contacto y Reserva</h2>
+                    <h2 class="section-title">Reserva y Ubicación</h2>
+                    <p class="text-gray-400 mt-4 max-w-3xl mx-auto">¿Listo para tu transformación? Completa el formulario y asegura tu hora. Nos encontramos en Lago Blanco 1585, Coquimbo.</p>
                 </div>
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mt-16 items-start">
-                    <!-- Contenido de reserva y mapa se mantiene igual -->
+                
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mt-12 items-start">
+                    <!-- Columna del Formulario -->
+                    <div>
+                        <form id="contact-form" action="https://formspree.io/f/TU_ID_DE_FORMULARIO" method="POST" class="w-full">
+                            <div id="form-success" class="hidden bg-green-600 text-white p-4 text-center mb-4 rounded-lg">
+                                ¡Gracias! Tu solicitud ha sido enviada. Te contactaremos a la brevedad.
+                            </div>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <input type="text" name="name" placeholder="NOMBRE" required class="form-input">
+                                <input type="tel" name="phone" placeholder="TELÉFONO / WHATSAPP" required class="form-input">
+                            </div>
+                            <div class="mt-6">
+                                <input type="email" name="email" placeholder="EMAIL" required class="form-input">
+                            </div>
+                            <div class="mt-6">
+                                <select name="service" required class="form-select">
+                                    <option value="" disabled selected>SELECCIONA UN SERVICIO...</option>
+                                    <option value="Corte de Cabello ($12.000)">Corte de Cabello ($12.000)</option>
+                                    <option value="Corte + Barba ($16.000)">Corte + Barba ($16.000)</option>
+                                    <option value="Platinado Global ($70.000)">Platinado Global ($70.000)</option>
+                                    <option value="Otro">Otro (Especificar en mensaje)</option>
+                                </select>
+                            </div>
+                            <div class="mt-6">
+                                <textarea name="message" placeholder="MENSAJE (OPCIONAL)" rows="3" class="form-input h-auto"></textarea>
+                            </div>
+                            <div class="mt-8 text-center">
+                                <button type="submit" class="btn-primary w-full sm:w-auto">
+                                    Enviar Solicitud
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                    
+                    <!-- Columna de Mapa e Info -->
+                    <div>
+                        <div class="h-80 w-full rounded-lg overflow-hidden border-2 border-gray-700">
+                            <iframe 
+                                class="map-grayscale"
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d864.061178292458!2d-71.2546005853337!3d-29.972396471197104!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9691cbd5bc6baeb1%3A0x1d123d4fb99d5ba5!2sMICHAEL%20THE%20BARBER!5e0!3m2!1ses-419!2scl!4v1753654219301!5m2!1ses-419!2scl" 
+                                width="100%" 
+                                height="100%" 
+                                style="border:0;" 
+                                allowfullscreen="" 
+                                loading="lazy" 
+                                referrerpolicy="no-referrer-when-downgrade"
+                                title="Mapa de ubicación de Michael The Barber Studios en Coquimbo">
+                            </iframe>
+                        </div>
+                        <div class="mt-6 text-center md:text-left">
+                             <div class="flex items-center justify-center md:justify-start mt-4">
+                                <svg class="w-5 h-5 mr-3 text-white flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0zM15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                                <span>Lago Blanco 1585, 1803000 Coquimbo</span>
+                            </div>
+                            <div class="flex items-center justify-center md:justify-start mt-4">
+                                <svg class="w-5 h-5 mr-3 text-white flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+                                <a href="tel:+56912345678" class="hover:text-white transition">+56 9 1234 5678</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
     </main>
 
     <!-- Footer -->
-    <footer class="bg-black">
-        <!-- Contenido del footer se mantiene igual -->
+    <footer class="bg-black border-t border-gray-800">
+        <div class="container mx-auto px-6 py-8 text-center text-gray-500">
+            <h3 class="font-display text-2xl text-white tracking-wider">MB STUDIOS</h3>
+            <p class="mt-4">Lago Blanco 1585, 1803000 Coquimbo, Chile</p>
+            <p>+56 9 1234 5678</p>
+            <div class="mt-6">
+                <a href="https://www.instagram.com/michael.the.barber_studios/" target="_blank" rel="noopener noreferrer" class="inline-block hover:text-white transition" aria-label="Visita nuestro Instagram">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.011 3.584-.069 4.85c-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.584-.012-4.85-.07c-3.252-.148-4.771-1.691-4.919-4.919-.058-1.265-.069-1.645-.069-4.85s.011-3.584.069-4.85c.149-3.225 1.664-4.771 4.919-4.919 1.266-.058 1.644-.07 4.85-.07zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948s.014 3.667.072 4.947c.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072s3.667-.014 4.947-.072c4.358-.2 6.78-2.618 6.98-6.98.059-1.281.073-1.689.073-4.948s-.014-3.667-.072-4.947c-.2-4.358-2.618-6.78-6.98-6.98-1.281-.058-1.689-.072-4.948-.072zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.162 6.162 6.162 6.162-2.759 6.162-6.162-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4s1.791-4 4-4 4 1.79 4 4-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.441 1.441 1.441 1.441-.645 1.441-1.441-.645-1.44-1.441-1.44z"/></svg>
+                </a>
+            </div>
+            <p class="text-xs mt-6">&copy; 2025 Michael The Barber Studios. Todos los derechos reservados.</p>
+            <p class="text-xs mt-1">Diseñado por JuanEmilioDev</p>
+        </div>
     </footer>
 
     <!-- JavaScript Personalizado -->
