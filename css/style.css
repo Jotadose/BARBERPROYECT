@@ -5,7 +5,7 @@ body {
     color: #E5E7EB; /* text-gray-200 */
 }
 
-h1, h2, h3, .font-display {
+h1, h2, .font-display {
     font-family: 'Oswald', sans-serif;
 }
 
@@ -68,6 +68,41 @@ h1, h2, h3, .font-display {
     @apply text-xl md:text-2xl text-white font-display uppercase;
 }
 
+/* --- NUEVOS ESTILOS PARA LA SECCIÓN DE SERVICIOS --- */
+.service-category-title {
+    font-family: 'Alfa Slab One', serif;
+    @apply text-3xl text-white tracking-widest border-b-2 border-gray-700 pb-2 mb-6;
+}
+
+.service-item {
+    display: flex;
+    align-items: baseline;
+    font-size: 1.125rem; /* text-lg */
+    color: #D1D5DB; /* text-gray-300 */
+}
+
+.service-name {
+    /* El nombre del servicio */
+    padding-right: 0.75rem;
+    background-color: #1f2937; /* bg-gray-800 or bg-gray-900 depending on the section */
+    z-index: 1;
+}
+
+.service-line {
+    /* La línea de puntos */
+    flex-grow: 1;
+    border-bottom: 2px dotted #4B5563; /* text-gray-600 */
+    transform: translateY(-5px);
+}
+
+.service-price {
+    /* El precio del servicio */
+    padding-left: 0.75rem;
+    background-color: #1f2937; /* bg-gray-800 or bg-gray-900 depending on the section */
+    z-index: 1;
+    font-weight: 600; /* font-semibold */
+    color: #FFFFFF; /* text-white */
+}
 
 /* Animaciones al hacer scroll */
 .animated {
