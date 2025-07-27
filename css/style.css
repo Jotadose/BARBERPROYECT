@@ -86,7 +86,7 @@ h1, h2, h3, .font-display {
     object-fit: cover; opacity: 0.3;
 }
 
-/* Servicios (Menu) */
+/* Servicios (Menu) - CORREGIDO */
 .service-category-title {
     font-family: 'Alfa Slab One', serif;
     font-size: 1.5rem;
@@ -101,7 +101,7 @@ h1, h2, h3, .font-display {
     font-size: 1.125rem;
 }
 .service-name {
-    background-color: #1f2937; /* bg-gray-900 */
+    background-color: #111827; /* Coincide con bg-gray-900 de la sección */
     padding-right: 0.5rem; z-index: 1;
 }
 .service-line {
@@ -110,7 +110,7 @@ h1, h2, h3, .font-display {
     transform: translateY(-4px);
 }
 .service-price {
-    background-color: #1f2937; /* bg-gray-900 */
+    background-color: #111827; /* Coincide con bg-gray-900 de la sección */
     padding-left: 0.5rem; z-index: 1;
     font-weight: 600; color: #FFFFFF;
 }
