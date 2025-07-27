@@ -8,13 +8,13 @@
     <title>Michael The Barber Studios - Barbería Profesional en Coquimbo</title>
     <meta name="description" content="Servicios de barbería de alto estándar en Coquimbo. Especialistas en cortes, fades, colorimetría y diseño. ¡Reserva tu cita online y vive la experiencia!">
     <meta name="keywords" content="barberia, peluqueria hombre, corte de pelo, fade, michael the barber, coquimbo, la serena">
-    <link rel="canonical" href="https://TU-DOMINIO.com/">
+    <link rel="canonical" href="https://barberproyect.vercel.app/"> <!-- Reemplaza con tu dominio final -->
 
     <!-- Open Graph para Redes Sociales -->
     <meta property="og:title" content="Michael The Barber Studios - Estilo y Precisión">
     <meta property="og:description" content="La mejor barbería de Coquimbo. Descubre nuestros trabajos y reserva tu cita.">
-    <meta property="og:image" content="https://TU-DOMINIO.com/img/IMG_5984.JPG">
-    <meta property="og:url" content="https://TU-DOMINIO.com/">
+    <meta property="og:image" content="https://barberproyect.vercel.app/img/IMG_5984.JPG"> <!-- URL absoluta de tu mejor imagen -->
+    <meta property="og:url" content="https://barberproyect.vercel.app/"> <!-- Reemplaza con tu dominio final -->
     <meta property="og:type" content="website">
     <meta property="og:locale" content="es_ES">
 
@@ -22,7 +22,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Michael The Barber Studios - Estilo y Precisión">
     <meta name="twitter:description" content="La mejor barbería de Coquimbo. Descubre nuestros trabajos y reserva tu cita.">
-    <meta name="twitter:image" content="https://TU-DOMINIO.com/img/IMG_5984.JPG">
+    <meta name="twitter:image" content="https://barberproyect.vercel.app/img/IMG_5984.JPG"> <!-- URL absoluta de tu mejor imagen -->
 
     <!-- Favicon -->
     <link rel="icon" href="/img/IMG_0177.JPG" type="image/jpeg">
@@ -30,10 +30,15 @@
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
+    <!-- Google Fonts: Oswald, Poppins & Alfa Slab One -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Oswald:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    
     <!-- CSS Personalizado -->
     <link rel="stylesheet" href="/css/style.css">
 
-    <!-- Google Analytics (GA4) -->
+    <!-- Google Analytics (GA4) - Reemplaza con tu ID -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -97,107 +102,136 @@
                 <div class="section-divider"></div>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8">
                     <div class="group relative overflow-hidden rounded-lg">
-                        <img loading="lazy" decoding="async" src="/img/barberia1-trabajodest.webp" alt="Hombre con un corte de pelo estilo fade y barba perfilada." class="img-zoom">
+                        <img loading="lazy" decoding="async" src="/img/IMG_5984.JPG" alt="Hombre con un corte de pelo estilo fade y barba perfilada." class="img-zoom">
                         <div class="img-overlay"><h3 class="img-title">Fades Perfectos</h3></div>
                     </div>
                     <div class="group relative overflow-hidden rounded-lg">
-                        <img loading="lazy" decoding="async" src="/img/barberia2-trabajodest.avif" alt="Joven con el pelo teñido de un color fantasía platinado." class="img-zoom">
+                        <img loading="lazy" decoding="async" src="/img/IMG_8078.JPG" alt="Joven con el pelo teñido de un color fantasía platinado." class="img-zoom">
                         <div class="img-overlay"><h3 class="img-title">Colorimetría Pro</h3></div>
                     </div>
                     <div class="group relative overflow-hidden rounded-lg">
-                        <img loading="lazy" decoding="async" src="/img/barberia3-trabajodest.avif" alt="Corte de pelo con un diseño de líneas y formas geométricas." class="img-zoom">
+                        <img loading="lazy" decoding="async" src="/img/IMG_0177-1.JPG" alt="Corte de pelo con un diseño de líneas y formas geométricas." class="img-zoom">
                         <div class="img-overlay"><h3 class="img-title">Diseño Freestyle</h3></div>
                     </div>
                 </div>
             </div>
         </section>
-        <!-- SECCION DE SERVICIOS-->
+
+        <!-- Services Section -->
         <section id="servicios" class="py-20 bg-gray-900 animated">
             <div class="container mx-auto px-6 text-center">
                 <h2 class="section-title">Nuestros Servicios</h2>
                 <div class="section-divider"></div>
                 <div class="max-w-4xl mx-auto text-left space-y-12">
                     <div>
-                        <h3 class="text-3xl font-display text-white tracking-widest border-b-2 border-gray-700 pb-2 mb-6">BARBERÍA</h3>
+                        <h3 class="service-category-title">BARBERÍA</h3>
                         <div class="space-y-4">
-                            <div class="flex justify-between items-center"><p class="text-xl">Corte de Cabello</p><p class="text-xl font-bold">$12.000</p></div>
-                            <div class="flex justify-between items-center"><p class="text-xl">Corte de Cabello + Barba</p><p class="text-xl font-bold">$16.000</p></div>
-                            <div class="flex justify-between items-center"><p class="text-xl">Corte + Barba + Limpieza Facial</p><p class="text-xl font-bold">$22.000</p></div>
-                            <div class="flex justify-between items-center"><p class="text-xl">Barba</p><p class="text-xl font-bold">$6.000</p></div>
+                            <div class="service-item"><span class="service-name">Corte de Cabello</span><span class="service-line"></span><span class="service-price">$12.000</span></div>
+                            <div class="service-item"><span class="service-name">Corte de Cabello + Barba</span><span class="service-line"></span><span class="service-price">$16.000</span></div>
+                            <div class="service-item"><span class="service-name">Corte + Barba + Limpieza Facial</span><span class="service-line"></span><span class="service-price">$22.000</span></div>
+                            <div class="service-item"><span class="service-name">Barba</span><span class="service-line"></span><span class="service-price">$6.000</span></div>
                         </div>
                     </div>
                     <div>
-                        <h3 class="text-3xl font-display text-white tracking-widest border-b-2 border-gray-700 pb-2 mb-6">COLORIMETRÍA</h3>
+                        <h3 class="service-category-title">COLORIMETRÍA</h3>
                         <div class="space-y-4">
-                            <div class="flex justify-between items-center"><p class="text-xl">Bloque de Color</p><p class="text-xl font-bold">$60.000</p></div>
-                            <div class="flex justify-between items-center"><p class="text-xl">Platinado Global</p><p class="text-xl font-bold">$70.000</p></div>
-                            <div class="flex justify-between items-center"><p class="text-xl">Visos</p><p class="text-xl font-bold">$60.000</p></div>
+                            <div class="service-item"><span class="service-name">Bloque de Color</span><span class="service-line"></span><span class="service-price">$60.000</span></div>
+                            <div class="service-item"><span class="service-name">Platinado Global</span><span class="service-line"></span><span class="service-price">$70.000</span></div>
+                            <div class="service-item"><span class="service-name">Visos</span><span class="service-line"></span><span class="service-price">$60.000</span></div>
                         </div>
                     </div>
                     <div>
-                        <h3 class="text-3xl font-display text-white tracking-widest border-b-2 border-gray-700 pb-2 mb-6">EXTRAS</h3>
+                        <h3 class="service-category-title">EXTRAS</h3>
                         <div class="space-y-4">
-                            <div class="flex justify-between items-center"><p class="text-xl">Ondulación Permanente</p><p class="text-xl font-bold">$55.000</p></div>
+                            <div class="service-item"><span class="service-name">Ondulación Permanente</span><span class="service-line"></span><span class="service-price">$55.000</span></div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
+        
+        <!-- Team Section -->
+        <section id="equipo" class="py-20 bg-black animated">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="section-title">Nuestro Equipo</h2>
+                <div class="section-divider"></div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-5xl mx-auto">
+                    <div class="text-center group"><img loading="lazy" decoding="async" src="/img/IMG_5984.JPG" alt="Retrato del barbero Michael" class="w-48 h-48 rounded-full mx-auto border-4 border-white object-cover transform group-hover:scale-110 transition-transform duration-300"><h3 class="mt-5 text-2xl font-display text-white uppercase">Michael The Barber</h3><p class="text-gray-400">Fundador / Especialista en Color</p></div>
+                    <div class="text-center group"><img loading="lazy" decoding="async" src="/img/IMG_8078.JPG" alt="Retrato del barbero Aleee Cut" class="w-48 h-48 rounded-full mx-auto border-4 border-white object-cover transform group-hover:scale-110 transition-transform duration-300"><h3 class="mt-5 text-2xl font-display text-white uppercase">Aleee Cut</h3><p class="text-gray-400">Experto en Fades</p></div>
+                    <div class="text-center group"><img loading="lazy" decoding="async" src="/img/nate-johnston-tgPrIYnW3g4-unsplash.jpg" alt="Retrato del barbero Kevo Cuts" class="w-48 h-48 rounded-full mx-auto border-4 border-white object-cover transform group-hover:scale-110 transition-transform duration-300"><h3 class="mt-5 text-2xl font-display text-white uppercase">Kevo Cuts</h3><p class="text-gray-400">Especialista en Diseño Freestyle</p></div>
+                </div>
+            </div>
+        </section>
 
-        <!-- Booking Section -->
+        <!-- Testimonial Section -->
+        <section id="testimonios" class="py-20 bg-gray-900 animated">
+            <div class="container mx-auto px-6 text-center max-w-3xl">
+                <h2 class="section-title">Qué Dicen Nuestros Clientes</h2>
+                <div class="section-divider"></div>
+                <div class="text-white italic text-xl md:text-2xl">
+                    <p>"El mejor corte que me han hecho en años. Michael no solo es un barbero, es un artista. El ambiente del estudio es increíble y la atención, de primera. 100% recomendado."</p>
+                    <cite class="block not-italic text-gray-400 mt-4">- Cliente Satisfecho</cite>
+                </div>
+            </div>
+        </section>
+
+        <!-- Booking & Map Section -->
         <section id="reserva" class="py-20 bg-black animated">
             <div class="container mx-auto px-6">
                 <div class="text-center">
-                    <h2 class="section-title">Reserva Tu Cita</h2>
-                    <p class="text-gray-400 mt-4 max-w-2xl mx-auto">¿Listo para tu transformación? Completa el formulario y asegura tu hora. Recibirás una confirmación por WhatsApp o email.</p>
+                    <h2 class="section-title">Reserva y Ubicación</h2>
+                    <p class="text-gray-400 mt-4 max-w-3xl mx-auto">¿Listo para tu transformación? Completa el formulario y asegura tu hora. Nos encontramos en Lago Blanco 1585, Coquimbo.</p>
                 </div>
-                <!-- Formulario funcional con Formspree -->
-                <form id="contact-form" action="https://formspree.io/f/xjkorkvw" method="POST" class="max-w-2xl mx-auto mt-10">
-                    <div id="form-success" class="hidden bg-green-600 text-white p-4 text-center mb-4 rounded-lg">
-                        ¡Gracias! Tu solicitud ha sido enviada. Te contactaremos a la brevedad.
+                
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mt-12 items-start">
+                    <!-- Columna del Formulario -->
+                    <div>
+                        <form id="contact-form" action="https://formspree.io/f/TU_ID_DE_FORMULARIO" method="POST" class="w-full">
+                            <div id="form-success" class="hidden bg-green-600 text-white p-4 text-center mb-4 rounded-lg">
+                                ¡Gracias! Tu solicitud ha sido enviada. Te contactaremos a la brevedad.
+                            </div>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <input type="text" name="name" placeholder="NOMBRE" required class="form-input">
+                                <input type="tel" name="phone" placeholder="TELÉFONO / WHATSAPP" required class="form-input">
+                            </div>
+                            <div class="mt-6">
+                                <input type="email" name="email" placeholder="EMAIL" required class="form-input">
+                            </div>
+                            <div class="mt-6">
+                                <select name="service" required class="form-select">
+                                    <option value="" disabled selected>SELECCIONA UN SERVICIO...</option>
+                                    <option value="Corte de Cabello ($12.000)">Corte de Cabello ($12.000)</option>
+                                    <option value="Corte + Barba ($16.000)">Corte + Barba ($16.000)</option>
+                                    <option value="Platinado Global ($70.000)">Platinado Global ($70.000)</option>
+                                    <option value="Otro">Otro (Especificar en mensaje)</option>
+                                </select>
+                            </div>
+                            <div class="mt-6">
+                                <textarea name="message" placeholder="MENSAJE (OPCIONAL)" rows="3" class="form-input h-auto"></textarea>
+                            </div>
+                            <div class="mt-8 text-center">
+                                <button type="submit" class="btn-primary w-full sm:w-auto">
+                                    Enviar Solicitud
+                                </button>
+                            </div>
+                        </form>
                     </div>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <input type="text" name="name" placeholder="NOMBRE" required class="form-input">
-                        <input type="tel" name="phone" placeholder="TELÉFONO / WHATSAPP" required class="form-input">
-                    </div>
-                    <div class="mt-6">
-                        <input type="email" name="email" placeholder="EMAIL" required class="form-input">
-                    </div>
-                    <div class="mt-6">
-                        <select name="service" required class="form-select">
-                            <option value="" disabled selected>SELECCIONA UN SERVICIO...</option>
-                            <option value="Corte de Cabello ($12.000)">Corte de Cabello ($12.000)</option>
-                            <option value="Corte + Barba ($16.000)">Corte + Barba ($16.000)</option>
-                            <option value="Platinado Global ($70.000)">Platinado Global ($70.000)</option>
-                            <option value="Otro">Otro (Especificar en mensaje)</option>
-                        </select>
-                    </div>
-                    <div class="mt-6">
-                        <textarea name="message" placeholder="MENSAJE (OPCIONAL)" rows="3" class="form-input h-auto"></textarea>
-                    </div>
-                    <div class="mt-8 text-center">
-                        <button type="submit" class="btn-primary w-full sm:w-auto">
-                            Enviar Solicitud
-                        </button>
-                    </div>
-                </form>
-            </div>
-        </section>
-
-        <!-- Map Section -->
-    <div>
-        <div class="h-80 w-full rounded-lg overflow-hidden border-2 border-gray-700">
-            <section id="ubicacion" class="h-96">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d864.061178292458!2d-71.2546005853337!3d-29.972396471197104!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9691cbd5bc6baeb1%3A0x1d123d4fb99d5ba5!2sMICHAEL%20THE%20BARBER!5e0!3m2!1ses-419!2scl!4v1753652623050!5m2!1ses-419!2scl" 
-                width="100%" 
-                height="100%" 
-                style="border:0;" 
-                allowfullscreen="" 
-                loading="lazy" 
-                referrerpolicy="no-referrer-when-downgrade"
-                title="Mapa de ubicación de Michael The Barber Studios en Coquimbo">
-            </iframe>
-            </div>
+                    
+                    <!-- Columna de Mapa e Info -->
+                    <div>
+                        <div class="h-80 w-full rounded-lg overflow-hidden border-2 border-gray-700">
+                            <iframe 
+                                class="map-grayscale"
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3450.490158445018!2d-71.25460062488668!3d-29.90795197492582!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9691ca0a7c4f4a9d%3A0x86e6b4f762696b9a!2sMICHAEL%20THE%20BARBER!5e0!3m2!1sen!2scl!4v1722124119107!5m2!1sen!2scl" 
+                                width="100%" 
+                                height="100%" 
+                                style="border:0;" 
+                                allowfullscreen="" 
+                                loading="lazy" 
+                                referrerpolicy="no-referrer-when-downgrade"
+                                title="Mapa de ubicación de Michael The Barber Studios en Coquimbo">
+                            </iframe>
+                        </div>
                         <div class="mt-6 text-center md:text-left">
                              <div class="flex items-center justify-center md:justify-start mt-4">
                                 <svg class="w-5 h-5 mr-3 text-white flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0zM15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
@@ -213,6 +247,7 @@
             </div>
         </section>
     </main>
+
     <!-- Footer -->
     <footer class="bg-black border-t border-gray-800">
         <div class="container mx-auto px-6 py-8 text-center text-gray-500">
