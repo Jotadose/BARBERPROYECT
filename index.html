@@ -57,7 +57,7 @@
             object-fit: cover;
         }
         .hero-overlay {
-            background-color: rgba(0,0,0,0.8);
+            background-color: rgba(0,0,0,0.7);
         }
 
         .btn-primary {
@@ -81,9 +81,10 @@
 
     <!-- Header -->
     <header class="bg-black/80 backdrop-blur-sm fixed top-0 left-0 right-0 z-50">
-        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+        <div class="container mx-auto px-6 py-2 flex justify-between items-center">
             <a href="#" class="font-display text-3xl text-white tracking-wider">
-                <img src="IMG_0177.JPG" class="h-12 w-auto" alt="Logo">
+                <!-- Logo integrado desde tus archivos locales -->
+                <img src="IMG_0177.JPG" class="h-16 w-auto object-contain" alt="Logo Michael The Barber Studios">
             </a>
             <nav class="hidden md:flex space-x-8 uppercase text-sm tracking-widest">
                 <a href="#destacados" class="hover:text-white transition duration-300">Trabajos</a>
@@ -109,12 +110,13 @@
         <!-- Hero Section with Video -->
         <section id="inicio" class="relative min-h-screen flex items-center justify-center text-center text-white pt-20 hero-overlay">
             <div class="hero-video-container">
-                <video autoplay loop muted playsinline id="heroVideo" poster="https://images.pexels.com/photos/3998425/pexels-photo-3998425.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2">
-                    <source src="https://assets.mixkit.co/videos/preview/mixkit-barber-giving-a-client-a-haircut-48421-large.mp4" type="video/mp4">
-                    [Video de un barbero trabajando]
+                <!-- Video integrado desde tus archivos locales. NOTA: .MOV puede no funcionar en todos los navegadores. Se recomienda convertir a .MP4 -->
+                <video autoplay loop muted playsinline id="heroVideo" poster="IMG_5984.JPG">
+                    <source src="IMG_1683.MOV" type="video/mp4">
+                    Tu navegador no es compatible con el video.
                 </video>
             </div>
-            <div class="relative z-10 fade-in-up">
+            <div class="relative z-10 fade-in-up px-4">
                 <h1 class="text-5xl md:text-7xl lg:text-8xl font-display tracking-wider uppercase">Michael The Barber</h1>
                 <h2 class="text-2xl md:text-4xl font-display tracking-widest uppercase text-gray-400 mt-2">Studios</h2>
                 <p class="text-lg md:text-xl mt-6 max-w-2xl mx-auto font-light">Servicios de barbería de alto estándar dedicados al trabajo de imagen masculino.</p>
@@ -132,19 +134,19 @@
                 <div class="h-1 w-24 bg-white mx-auto mt-4 mb-12"></div>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                     <div class="group relative overflow-hidden">
-                        <img src="https://images.pexels.com/photos/897262/pexels-photo-897262.jpeg?auto=compress&cs=tinysrgb&w=800" alt="[Corte de pelo con fade]" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                        <img src="IMG_5984.JPG" alt="Corte de pelo con fade" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
                         <div class="absolute inset-0 bg-black bg-opacity-50 flex items-end p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                             <h3 class="text-2xl text-white font-display uppercase">Fades Perfectos</h3>
                         </div>
                     </div>
                     <div class="group relative overflow-hidden">
-                        <img src="https://images.pexels.com/photos/1813272/pexels-photo-1813272.jpeg?auto=compress&cs=tinysrgb&w=800" alt="[Trabajo de colorimetría]" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                        <img src="IMG_8078.JPG" alt="Trabajo de colorimetría" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
                         <div class="absolute inset-0 bg-black bg-opacity-50 flex items-end p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                             <h3 class="text-2xl text-white font-display uppercase">Colorimetría Pro</h3>
                         </div>
                     </div>
                     <div class="group relative overflow-hidden">
-                        <img src="https://images.pexels.com/photos/5240634/pexels-photo-5240634.jpeg?auto=compress&cs=tinysrgb&w=800" alt="[Diseño de pelo freestyle]" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+                        <img src="IMG_0177[1].JPG" alt="Diseño de pelo freestyle" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
                         <div class="absolute inset-0 bg-black bg-opacity-50 flex items-end p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                             <h3 class="text-2xl text-white font-display uppercase">Diseño Freestyle</h3>
                         </div>
@@ -192,9 +194,9 @@
                 <h2 class="text-5xl font-display text-white tracking-wider uppercase">Nuestro Equipo</h2>
                 <div class="h-1 w-24 bg-white mx-auto mt-4 mb-12"></div>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-5xl mx-auto">
-                    <div class="text-center group"><img src="https://images.pexels.com/photos/3998425/pexels-photo-3998425.jpeg?auto=compress&cs=tinysrgb&w=800" alt="[Retrato del barbero Michael]" class="w-48 h-48 rounded-full mx-auto border-4 border-white object-cover transform group-hover:scale-110 transition-transform duration-300"><h3 class="mt-5 text-2xl font-display text-white uppercase">Michael The Barber</h3><p class="text-gray-400">Fundador / Especialista en Color</p></div>
-                    <div class="text-center group"><img src="https://images.pexels.com/photos/4946520/pexels-photo-4946520.jpeg?auto=compress&cs=tinysrgb&w=800" alt="[Retrato del barbero Aleee Cut]" class="w-48 h-48 rounded-full mx-auto border-4 border-white object-cover transform group-hover:scale-110 transition-transform duration-300"><h3 class="mt-5 text-2xl font-display text-white uppercase">Aleee Cut</h3><p class="text-gray-400">Experto en Fades</p></div>
-                    <div class="text-center group"><img src="https://images.pexels.com/photos/5323543/pexels-photo-5323543.jpeg?auto=compress&cs=tinysrgb&w=800" alt="[Retrato del barbero Kevo Cuts]" class="w-48 h-48 rounded-full mx-auto border-4 border-white object-cover transform group-hover:scale-110 transition-transform duration-300"><h3 class="mt-5 text-2xl font-display text-white uppercase">Kevo Cuts</h3><p class="text-gray-400">Especialista en Diseño Freestyle</p></div>
+                    <div class="text-center group"><img src="IMG_5984.JPG" alt="Retrato del barbero Michael" class="w-48 h-48 rounded-full mx-auto border-4 border-white object-cover transform group-hover:scale-110 transition-transform duration-300"><h3 class="mt-5 text-2xl font-display text-white uppercase">Michael The Barber</h3><p class="text-gray-400">Fundador / Especialista en Color</p></div>
+                    <div class="text-center group"><img src="IMG_8078.JPG" alt="Retrato del barbero Aleee Cut" class="w-48 h-48 rounded-full mx-auto border-4 border-white object-cover transform group-hover:scale-110 transition-transform duration-300"><h3 class="mt-5 text-2xl font-display text-white uppercase">Aleee Cut</h3><p class="text-gray-400">Experto en Fades</p></div>
+                    <div class="text-center group"><img src="IMG_0177[1].JPG" alt="Retrato del barbero Kevo Cuts" class="w-48 h-48 rounded-full mx-auto border-4 border-white object-cover transform group-hover:scale-110 transition-transform duration-300"><h3 class="mt-5 text-2xl font-display text-white uppercase">Kevo Cuts</h3><p class="text-gray-400">Especialista en Diseño Freestyle</p></div>
                 </div>
             </div>
         </section>
@@ -205,14 +207,14 @@
                 <h2 class="text-5xl font-display text-white tracking-wider uppercase">Galería Completa</h2>
                 <div class="h-1 w-24 bg-white mx-auto mt-4 mb-12"></div>
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-2">
-                    <img src="https://images.pexels.com/photos/2061883/pexels-photo-2061883.jpeg?auto=compress&cs=tinysrgb&w=800" alt="[Imagen de un corte de pelo con fade]" class="aspect-w-1 aspect-h-1 object-cover w-full h-full hover:opacity-75 transition-opacity duration-300">
-                    <img src="https://images.pexels.com/photos/973401/pexels-photo-973401.jpeg?auto=compress&cs=tinysrgb&w=800" alt="[Imagen de un cabello platinado]" class="aspect-w-1 aspect-h-1 object-cover w-full h-full hover:opacity-75 transition-opacity duration-300">
-                    <img src="https://images.pexels.com/photos/769745/pexels-photo-769745.jpeg?auto=compress&cs=tinysrgb&w=800" alt="[Imagen de un diseño de líneas en el pelo]" class="aspect-w-1 aspect-h-1 object-cover w-full h-full hover:opacity-75 transition-opacity duration-300">
-                    <img src="https://images.pexels.com/photos/1319460/pexels-photo-1319460.jpeg?auto=compress&cs=tinysrgb&w=800" alt="[Imagen de una barba perfilada]" class="aspect-w-1 aspect-h-1 object-cover w-full h-full hover:opacity-75 transition-opacity duration-300">
-                    <img src="https://images.pexels.com/photos/3166833/pexels-photo-3166833.jpeg?auto=compress&cs=tinysrgb&w=800" alt="[Imagen de un corte de pelo moderno]" class="aspect-w-1 aspect-h-1 object-cover w-full h-full hover:opacity-75 transition-opacity duration-300">
-                    <img src="https://images.pexels.com/photos/3993449/pexels-photo-3993449.jpeg?auto=compress&cs=tinysrgb&w=800" alt="[Imagen de un peinado con textura]" class="aspect-w-1 aspect-h-1 object-cover w-full h-full hover:opacity-75 transition-opacity duration-300">
-                    <img src="https://images.pexels.com/photos/5483879/pexels-photo-5483879.jpeg?auto=compress&cs=tinysrgb&w=800" alt="[Imagen de un corte clásico]" class="aspect-w-1 aspect-h-1 object-cover w-full h-full hover:opacity-75 transition-opacity duration-300">
-                    <img src="https://images.pexels.com/photos/2779953/pexels-photo-2779953.jpeg?auto=compress&cs=tinysrgb&w=800" alt="[Imagen de un arreglo de barba]" class="aspect-w-1 aspect-h-1 object-cover w-full h-full hover:opacity-75 transition-opacity duration-300">
+                    <img src="IMG_5984.JPG" alt="Imagen de un corte de pelo con fade" class="aspect-w-1 aspect-h-1 object-cover w-full h-full hover:opacity-75 transition-opacity duration-300">
+                    <img src="nate-johnston-tgPrIYnW3g4-unsplash.jpg" alt="Imagen de un cabello platinado" class="aspect-w-1 aspect-h-1 object-cover w-full h-full hover:opacity-75 transition-opacity duration-300">
+                    <img src="IMG_0177[1].JPG" alt="Imagen de un diseño de líneas en el pelo" class="aspect-w-1 aspect-h-1 object-cover w-full h-full hover:opacity-75 transition-opacity duration-300">
+                    <img src="IMG_0177.JPG" alt="Imagen de una barba perfilada" class="aspect-w-1 aspect-h-1 object-cover w-full h-full hover:opacity-75 transition-opacity duration-300">
+                    <img src="IMG_8078.JPG" alt="Imagen de un corte de pelo moderno" class="aspect-w-1 aspect-h-1 object-cover w-full h-full hover:opacity-75 transition-opacity duration-300">
+                    <img src="IMG_5984.JPG" alt="Imagen de un peinado con textura" class="aspect-w-1 aspect-h-1 object-cover w-full h-full hover:opacity-75 transition-opacity duration-300">
+                    <img src="IMG_0177[1].JPG" alt="Imagen de un corte clásico" class="aspect-w-1 aspect-h-1 object-cover w-full h-full hover:opacity-75 transition-opacity duration-300">
+                    <img src="IMG_0177.JPG" alt="Imagen de un arreglo de barba" class="aspect-w-1 aspect-h-1 object-cover w-full h-full hover:opacity-75 transition-opacity duration-300">
                 </div>
             </div>
         </section>
@@ -225,7 +227,7 @@
                     <p class="text-gray-400 mt-4 max-w-2xl mx-auto">¿Listo para tu transformación? Completa el formulario y asegura tu hora.</p>
                 </div>
                 <form @submit.prevent="submitForm" class="max-w-2xl mx-auto mt-10">
-                    <div x-show="successMessage" class="bg-green-600 text-white p-4 text-center mb-4">
+                    <div x-show="successMessage" class="bg-green-600 text-white p-4 text-center mb-4 rounded-lg">
                         ¡Gracias! Tu solicitud ha sido enviada. Te contactaremos a la brevedad.
                     </div>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -233,7 +235,7 @@
                         <input type="tel" placeholder="TELÉFONO" required class="bg-transparent border-b-2 border-gray-600 p-3 w-full focus:outline-none focus:border-white transition">
                     </div>
                     <div class="mt-6">
-                        <select required class="bg-black border-b-2 border-gray-600 p-3 w-full focus:outline-none focus:border-white transition">
+                        <select required class="bg-black border-2 border-gray-600 p-3 w-full focus:outline-none focus:border-white transition rounded-lg">
                             <option value="" disabled selected>SELECCIONA UN SERVICIO...</option>
                             <option value="corte">Corte de Cabello ($12.000)</option>
                             <option value="corte_barba">Corte + Barba ($16.000)</option>
@@ -266,7 +268,7 @@
                 </a>
             </div>
             <p class="text-xs mt-6">&copy; 2025 Michael The Barber Studios. Todos los derechos reservados.</p>
-            <p class="text-xs mt-1">Diseñado por JunaEmilioDev </p>
+            <p class="text-xs mt-1">Diseñado por JuanEmilioDev</p>
         </div>
     </footer>
 
@@ -306,4 +308,3 @@
 
 </body>
 </html>
-
