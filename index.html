@@ -212,7 +212,7 @@
         font-size: 1.125rem;
       }
       .service-name {
-        background-color: #1f2937;
+        background-color: #111827;
         padding-right: 0.5rem;
         z-index: 1;
       }
@@ -222,7 +222,7 @@
         transform: translateY(-4px);
       }
       .service-price {
-        background-color: #1f2937;
+        background-color: #111827;
         padding-left: 0.5rem;
         z-index: 1;
         font-weight: 600;
@@ -279,6 +279,21 @@
           transform: translateY(0);
         }
       }
+
+      /* --- ESTILOS PARA GLASS Y NEON --- */
+      .card-glass-neon {
+        background: rgba(17, 24, 39, 0.5); /* bg-gray-900 con transparencia */
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        border: 1px solid rgba(212, 175, 55, 0.2);
+        transition: all 0.3s ease;
+        box-shadow: 0 0 5px rgba(212, 175, 55, 0.2);
+      }
+      .card-glass-neon:hover {
+        border-color: rgba(212, 175, 55, 0.5);
+        box-shadow: 0 0 15px rgba(212, 175, 55, 0.5);
+        transform: translateY(-5px);
+      }
     </style>
   </head>
 
@@ -291,9 +306,10 @@
         class="container mx-auto px-6 py-2 flex justify-between items-center"
       >
         <a href="#inicio" aria-label="Volver al inicio">
+          <!-- LOGO CON ESQUINAS REDONDEADAS -->
           <img
             src="/img/IMG_0177.JPG"
-            class="h-16 w-auto object-contain"
+            class="h-16 w-auto object-contain rounded-xl"
             alt="Logo de Michael The Barber Studios"
           />
         </a>
@@ -531,11 +547,11 @@
                 <!-- Card 1 -->
                 <div class="w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4">
                   <div
-                    class="bg-gray-900 rounded-lg shadow-lg overflow-hidden h-full flex flex-col"
+                    class="card-glass-neon rounded-lg overflow-hidden h-full flex flex-col"
                   >
                     <img
                       class="w-full h-48 object-cover"
-                      src="https://placehold.co/600x400/d4af37/111111?text=Corte+Clásico"
+                      src="https://placehold.co/600x400/000000/d4af37?text=Corte+Clásico"
                       alt="Seminario de Barbería Clásica"
                     />
                     <div class="p-6 flex flex-col flex-grow">
@@ -572,11 +588,11 @@
                 <!-- Card 2 -->
                 <div class="w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4">
                   <div
-                    class="bg-gray-900 rounded-lg shadow-lg overflow-hidden h-full flex flex-col"
+                    class="card-glass-neon rounded-lg overflow-hidden h-full flex flex-col"
                   >
                     <img
                       class="w-full h-48 object-cover"
-                      src="https://placehold.co/600x400/d4af37/111111?text=Afeitado"
+                      src="https://placehold.co/600x400/000000/d4af37?text=Afeitado"
                       alt="Seminario de Afeitado"
                     />
                     <div class="p-6 flex flex-col flex-grow">
@@ -613,11 +629,11 @@
                 <!-- Card 3 -->
                 <div class="w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4">
                   <div
-                    class="bg-gray-900 rounded-lg shadow-lg overflow-hidden h-full flex flex-col"
+                    class="card-glass-neon rounded-lg overflow-hidden h-full flex flex-col"
                   >
                     <img
                       class="w-full h-48 object-cover"
-                      src="https://placehold.co/600x400/d4af37/111111?text=Fades"
+                      src="https://placehold.co/600x400/000000/d4af37?text=Fades"
                       alt="Seminario de Fade"
                     />
                     <div class="p-6 flex flex-col flex-grow">
@@ -654,11 +670,11 @@
                 <!-- Card 4 -->
                 <div class="w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4">
                   <div
-                    class="bg-gray-900 rounded-lg shadow-lg overflow-hidden h-full flex flex-col"
+                    class="card-glass-neon rounded-lg overflow-hidden h-full flex flex-col"
                   >
                     <img
                       class="w-full h-48 object-cover"
-                      src="https://placehold.co/600x400/d4af37/111111?text=Diseño"
+                      src="https://placehold.co/600x400/000000/d4af37?text=Diseño"
                       alt="Seminario de Diseño en Cabello"
                     />
                     <div class="p-6 flex flex-col flex-grow">
@@ -695,11 +711,11 @@
                 <!-- Card 5 -->
                 <div class="w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4">
                   <div
-                    class="bg-gray-900 rounded-lg shadow-lg overflow-hidden h-full flex flex-col"
+                    class="card-glass-neon rounded-lg overflow-hidden h-full flex flex-col"
                   >
                     <img
                       class="w-full h-48 object-cover"
-                      src="https://placehold.co/600x400/d4af37/111111?text=Barba"
+                      src="https://placehold.co/600x400/000000/d4af37?text=Barba"
                       alt="Seminario de Cuidado de Barba"
                     />
                     <div class="p-6 flex flex-col flex-grow">
@@ -736,11 +752,11 @@
                 <!-- Card 6 -->
                 <div class="w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4">
                   <div
-                    class="bg-gray-900 rounded-lg shadow-lg overflow-hidden h-full flex flex-col"
+                    class="card-glass-neon rounded-lg overflow-hidden h-full flex flex-col"
                   >
                     <img
                       class="w-full h-48 object-cover"
-                      src="https://placehold.co/600x400/d4af37/111111?text=Negocio"
+                      src="https://placehold.co/600x400/000000/d4af37?text=Negocio"
                       alt="Seminario de Negocio de Barbería"
                     />
                     <div class="p-6 flex flex-col flex-grow">
