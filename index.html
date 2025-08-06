@@ -197,15 +197,6 @@
       .group:hover .img-title {
         transform: translateY(0);
       }
-      .service-category-title {
-        font-family: "Alfa Slab One", serif;
-        font-size: 1.5rem;
-        color: #d4af37;
-        letter-spacing: 0.1em;
-        border-bottom: 1px solid #4b5563;
-        padding-bottom: 0.5rem;
-        margin-bottom: 1.5rem;
-      }
       .service-item {
         display: flex;
         align-items: baseline;
@@ -270,10 +261,14 @@
         transform: translateY(0);
       }
       .fade-in-up {
-        animation: fadeInUp 1s ease-out 0.5s forwards;
+        animation: fadeInUp 1s ease-out forwards;
         opacity: 0;
       }
       @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
         to {
           opacity: 1;
           transform: translateY(0);
@@ -354,7 +349,6 @@
           </svg>
         </button>
       </div>
-      <!-- Menú Móvil -->
       <div
         id="mobile-menu"
         class="hidden md:hidden absolute top-0 left-0 w-full h-screen bg-black flex flex-col items-center justify-center space-y-8"
@@ -392,22 +386,28 @@
             Tu navegador no es compatible con el video.
           </video>
         </div>
-        <div class="relative z-10 fade-in-up px-4">
+        <div class="relative z-10 px-4">
           <h1
-            class="text-5xl md:text-7xl lg:text-8xl font-display tracking-wider uppercase"
+            class="text-5xl md:text-7xl lg:text-8xl font-display tracking-wider uppercase fade-in-up"
+            style="animation-delay: 0.2s"
           >
             Michael The Barber
           </h1>
           <h2
-            class="text-2xl md:text-4xl font-display tracking-widest uppercase text-gray-400 mt-2"
+            class="text-2xl md:text-4xl font-display tracking-widest uppercase text-gray-400 mt-2 fade-in-up"
+            style="animation-delay: 0.4s"
           >
             Studios
           </h2>
-          <p class="text-lg md:text-xl mt-6 max-w-2xl mx-auto font-light">
+          <p
+            class="text-lg md:text-xl mt-6 max-w-2xl mx-auto font-light fade-in-up"
+            style="animation-delay: 0.6s"
+          >
             Servicios de barbería y formación de alto estándar en Coquimbo.
           </p>
           <div
-            class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4"
+            class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4 fade-in-up"
+            style="animation-delay: 0.8s"
           >
             <a href="#reserva" class="btn-primary w-full sm:w-auto"
               >Reservar Ahora</a
@@ -424,43 +424,99 @@
         <div class="container mx-auto px-6 text-center">
           <h2 class="section-title">Trabajos Destacados</h2>
           <div class="section-divider"></div>
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8">
-            <div class="group relative overflow-hidden rounded-lg">
-              <img
-                loading="lazy"
-                decoding="async"
-                src="/img/barberia1-trabajodest.webp"
-                alt="Hombre con un corte de pelo estilo fade y barba perfilada."
-                class="img-zoom"
-              />
-              <div class="img-overlay">
-                <h3 class="img-title">Fades Perfectos</h3>
+          <div class="relative mt-8">
+            <div class="overflow-hidden">
+              <div
+                id="carousel-trabajos"
+                class="flex transition-transform duration-500 ease-in-out -ml-4"
+              >
+                <!-- Trabajo 1 -->
+                <div class="w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4">
+                  <div class="group relative overflow-hidden rounded-lg">
+                    <img
+                      loading="lazy"
+                      decoding="async"
+                      src="/img/barberia1-trabajodest.webp"
+                      alt="Hombre con un corte de pelo estilo fade y barba perfilada."
+                      class="img-zoom"
+                    />
+                    <div class="img-overlay">
+                      <h3 class="img-title">Fades Perfectos</h3>
+                    </div>
+                  </div>
+                </div>
+                <!-- Trabajo 2 -->
+                <div class="w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4">
+                  <div class="group relative overflow-hidden rounded-lg">
+                    <img
+                      loading="lazy"
+                      decoding="async"
+                      src="/img/barberia2-trabajodest.avif"
+                      alt="Joven con el pelo teñido de un color fantasía platinado."
+                      class="img-zoom"
+                    />
+                    <div class="img-overlay">
+                      <h3 class="img-title">Colorimetría Pro</h3>
+                    </div>
+                  </div>
+                </div>
+                <!-- Trabajo 3 -->
+                <div class="w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4">
+                  <div class="group relative overflow-hidden rounded-lg">
+                    <img
+                      loading="lazy"
+                      decoding="async"
+                      src="/img/barberia3-trabajodest.avif"
+                      alt="Corte de pelo con un diseño de líneas y formas geométricas."
+                      class="img-zoom"
+                    />
+                    <div class="img-overlay">
+                      <h3 class="img-title">Diseño Freestyle</h3>
+                    </div>
+                  </div>
+                </div>
+                <!-- Puedes agregar más trabajos aquí siguiendo el mismo formato -->
               </div>
             </div>
-            <div class="group relative overflow-hidden rounded-lg">
-              <img
-                loading="lazy"
-                decoding="async"
-                src="/img/barberia2-trabajodest.avif"
-                alt="Joven con el pelo teñido de un color fantasía platinado."
-                class="img-zoom"
-              />
-              <div class="img-overlay">
-                <h3 class="img-title">Colorimetría Pro</h3>
-              </div>
-            </div>
-            <div class="group relative overflow-hidden rounded-lg">
-              <img
-                loading="lazy"
-                decoding="async"
-                src="/img/barberia3-trabajodest.avif"
-                alt="Corte de pelo con un diseño de líneas y formas geométricas."
-                class="img-zoom"
-              />
-              <div class="img-overlay">
-                <h3 class="img-title">Diseño Freestyle</h3>
-              </div>
-            </div>
+            <!-- Controles -->
+            <button
+              id="prev-trabajos"
+              class="absolute top-1/2 left-0 -translate-y-1/2 bg-white/50 hover:bg-white/80 dark:bg-gray-800/50 dark:hover:bg-gray-800/80 rounded-full p-2 text-gray-800 dark:text-white focus:outline-none z-10"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M15 19l-7-7 7-7"
+                />
+              </svg>
+            </button>
+            <button
+              id="next-trabajos"
+              class="absolute top-1/2 right-0 -translate-y-1/2 bg-white/50 hover:bg-white/80 dark:bg-gray-800/50 dark:hover:bg-gray-800/80 rounded-full p-2 text-gray-800 dark:text-white focus:outline-none z-10"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 5l7 7-7 7"
+                />
+              </svg>
+            </button>
           </div>
         </div>
       </section>
@@ -470,9 +526,34 @@
         <div class="container mx-auto px-6 text-center">
           <h2 class="section-title">Nuestros Servicios</h2>
           <div class="section-divider"></div>
-          <div class="max-w-4xl mx-auto text-left space-y-12">
-            <div>
-              <h3 class="service-category-title">BARBERÍA</h3>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            <!-- Card Barbería -->
+            <div
+              class="bg-black/20 p-8 rounded-lg border border-gray-700 text-left"
+            >
+              <div class="flex items-center mb-6">
+                <svg
+                  class="w-10 h-10 text-[#D4AF37]"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="1.5"
+                    d="M14.121 14.121L19 19m-7-7l7-7m-7 7l-2.879 2.879M12 12L9.121 9.121M3 3l3.586 3.586m5.282 5.282L16 16"
+                  ></path>
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="1.5"
+                    d="M17.5 2a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0zM6.5 13a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z"
+                  ></path>
+                </svg>
+                <h3 class="font-display text-2xl text-white ml-4">Barbería</h3>
+              </div>
               <div class="space-y-4">
                 <div class="service-item">
                   <span class="service-name">Corte de Cabello</span
@@ -480,13 +561,12 @@
                   ><span class="service-price">$12.000</span>
                 </div>
                 <div class="service-item">
-                  <span class="service-name">Corte de Cabello + Barba</span
+                  <span class="service-name">Corte + Barba</span
                   ><span class="service-line"></span
                   ><span class="service-price">$16.000</span>
                 </div>
                 <div class="service-item">
-                  <span class="service-name"
-                    >Corte + Barba + Limpieza Facial</span
+                  <span class="service-name">Corte + Barba + Limpieza</span
                   ><span class="service-line"></span
                   ><span class="service-price">$22.000</span>
                 </div>
@@ -497,8 +577,35 @@
                 </div>
               </div>
             </div>
-            <div>
-              <h3 class="service-category-title">COLORIMETRÍA</h3>
+            <!-- Card Colorimetría -->
+            <div
+              class="bg-black/20 p-8 rounded-lg border border-gray-700 text-left"
+            >
+              <div class="flex items-center mb-6">
+                <svg
+                  class="w-10 h-10 text-[#D4AF37]"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="1.5"
+                    d="M20.618 5.982L18.018 3.382a2.25 2.25 0 00-3.182 0L3.382 14.836a2.25 2.25 0 000 3.182l2.6 2.6a2.25 2.25 0 003.182 0L20.618 9.164a2.25 2.25 0 000-3.182z"
+                  ></path>
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="1.5"
+                    d="M15 6l4 4"
+                  ></path>
+                </svg>
+                <h3 class="font-display text-2xl text-white ml-4">
+                  Colorimetría
+                </h3>
+              </div>
               <div class="space-y-4">
                 <div class="service-item">
                   <span class="service-name">Bloque de Color</span
@@ -517,8 +624,27 @@
                 </div>
               </div>
             </div>
-            <div>
-              <h3 class="service-category-title">EXTRAS</h3>
+            <!-- Card Extras -->
+            <div
+              class="bg-black/20 p-8 rounded-lg border border-gray-700 text-left"
+            >
+              <div class="flex items-center mb-6">
+                <svg
+                  class="w-10 h-10 text-[#D4AF37]"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="1.5"
+                    d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l-3 3m0 0l3 3m-3-3H9m6 6l3 3m0 0l-3 3m3-3V9m-6 6l-3 3m0 0l3 3m-3-3h6"
+                  ></path>
+                </svg>
+                <h3 class="font-display text-2xl text-white ml-4">Extras</h3>
+              </div>
               <div class="space-y-4">
                 <div class="service-item">
                   <span class="service-name">Ondulación Permanente</span
@@ -791,7 +917,6 @@
               </div>
             </div>
 
-            <!-- Controles -->
             <button
               id="prev"
               class="absolute top-1/2 left-0 -translate-y-1/2 bg-white/50 hover:bg-white/80 dark:bg-gray-800/50 dark:hover:bg-gray-800/80 rounded-full p-2 text-gray-800 dark:text-white focus:outline-none z-10"
@@ -1207,55 +1332,64 @@
           });
         }
 
-        // --- Lógica para el carrusel de seminarios ---
-        const carousel = document.getElementById("carousel");
-        if (carousel) {
-          const prevButton = document.getElementById("prev");
-          const nextButton = document.getElementById("next");
-          const totalCards = carousel.children.length;
-          let cardWidth = 0;
-          let currentIndex = 0;
-          let cardsInView = 3;
+        // --- Lógica genérica para carruseles ---
+        function setupCarousel(carouselId, prevId, nextId) {
+          const carousel = document.getElementById(carouselId);
+          if (carousel) {
+            const prevButton = document.getElementById(prevId);
+            const nextButton = document.getElementById(nextId);
+            const totalCards = carousel.children.length;
+            let cardWidth = 0;
+            let currentIndex = 0;
+            let cardsInView = 3;
 
-          function updateCarousel() {
-            if (window.innerWidth < 768) {
-              cardsInView = 1;
-            } else if (window.innerWidth < 1024) {
-              cardsInView = 2;
-            } else {
-              cardsInView = 3;
+            function updateCarousel() {
+              if (window.innerWidth < 768) {
+                cardsInView = 1;
+              } else if (window.innerWidth < 1024) {
+                cardsInView = 2;
+              } else {
+                cardsInView = 3;
+              }
+              // Asegurarse de que el carrusel no intente mostrar más tarjetas de las que existen
+              cardsInView = Math.min(cardsInView, totalCards);
+
+              cardWidth = carousel.clientWidth / cardsInView;
+              goToIndex(currentIndex);
             }
-            cardWidth = carousel.clientWidth / cardsInView;
-            goToIndex(currentIndex);
+
+            function goToIndex(index) {
+              const maxIndex =
+                totalCards > cardsInView ? totalCards - cardsInView : 0;
+              currentIndex = Math.max(0, Math.min(index, maxIndex));
+              carousel.style.transform = `translateX(-${
+                currentIndex * cardWidth
+              }px)`;
+
+              prevButton.disabled = currentIndex === 0;
+              nextButton.disabled = currentIndex === maxIndex;
+              prevButton.classList.toggle("opacity-50", currentIndex === 0);
+              nextButton.classList.toggle(
+                "opacity-50",
+                currentIndex === maxIndex
+              );
+            }
+
+            prevButton.addEventListener("click", () => {
+              goToIndex(currentIndex - 1);
+            });
+
+            nextButton.addEventListener("click", () => {
+              goToIndex(currentIndex + 1);
+            });
+
+            window.addEventListener("resize", updateCarousel);
+            updateCarousel();
           }
-
-          function goToIndex(index) {
-            const maxIndex = totalCards - cardsInView;
-            currentIndex = Math.max(0, Math.min(index, maxIndex));
-            carousel.style.transform = `translateX(-${
-              currentIndex * cardWidth
-            }px)`;
-
-            prevButton.disabled = currentIndex === 0;
-            nextButton.disabled = currentIndex === maxIndex;
-            prevButton.classList.toggle("opacity-50", currentIndex === 0);
-            nextButton.classList.toggle(
-              "opacity-50",
-              currentIndex === maxIndex
-            );
-          }
-
-          prevButton.addEventListener("click", () => {
-            goToIndex(currentIndex - 1);
-          });
-
-          nextButton.addEventListener("click", () => {
-            goToIndex(currentIndex + 1);
-          });
-
-          window.addEventListener("resize", updateCarousel);
-          updateCarousel();
         }
+
+        setupCarousel("carousel", "prev", "next"); // Seminarios
+        setupCarousel("carousel-trabajos", "prev-trabajos", "next-trabajos"); // Trabajos Destacados
       });
     </script>
   </body>
