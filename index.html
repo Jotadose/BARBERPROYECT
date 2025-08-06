@@ -14,7 +14,7 @@
     />
     <meta
       name="keywords"
-      content="barberia, seminarios de barberia, cursos de barberia, michael the barber, coquimbo, la serena"
+      content="barberia, peluqueria hombre, corte de pelo, fade, seminarios de barberia, michael the barber, coquimbo, la serena"
     />
     <link rel="canonical" href="https://barberproyect.vercel.app/" />
     <!-- Reemplaza con tu dominio final -->
@@ -38,6 +38,22 @@
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="es_ES" />
 
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Michael The Barber Studios - Estilo y Precisión"
+    />
+    <meta
+      name="twitter:description"
+      content="La mejor barbería de Coquimbo. Descubre nuestros trabajos y reserva tu cita."
+    />
+    <meta
+      name="twitter:image"
+      content="https://placehold.co/1200x630/111111/D4AF37?text=Michael+The+Barber"
+    />
+    <!-- URL absoluta de tu mejor imagen -->
+
     <!-- Favicon -->
     <link
       rel="icon"
@@ -56,7 +72,7 @@
       rel="stylesheet"
     />
 
-    <!-- Estilos CSS Internos para el MVP -->
+    <!-- Estilos CSS Internos -->
     <style>
       body {
         font-family: "Poppins", sans-serif;
@@ -147,6 +163,44 @@
         object-fit: cover;
         opacity: 0.3;
       }
+      .img-zoom {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease-in-out;
+      }
+      .group:hover .img-zoom {
+        transform: scale(1.1);
+      }
+      .img-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          to top,
+          rgba(0, 0, 0, 0.8) 0,
+          rgba(0, 0, 0, 0) 100%
+        );
+        display: flex;
+        align-items: flex-end;
+        padding: 1.5rem;
+        opacity: 0;
+        transition: opacity 0.5s ease-in-out;
+      }
+      .group:hover .img-overlay {
+        opacity: 1;
+      }
+      .img-title {
+        font-size: 1.5rem;
+        line-height: 2rem;
+        color: #fff;
+        font-family: "Oswald", sans-serif;
+        text-transform: uppercase;
+        transform: translateY(20px);
+        transition: transform 0.5s ease-in-out;
+      }
+      .group:hover .img-title {
+        transform: translateY(0);
+      }
       .service-category-title {
         font-family: "Alfa Slab One", serif;
         font-size: 1.5rem;
@@ -162,7 +216,7 @@
         font-size: 1.125rem;
       }
       .service-name {
-        background-color: #111827;
+        background-color: #1f2937;
         padding-right: 0.5rem;
         z-index: 1;
       }
@@ -172,7 +226,7 @@
         transform: translateY(-4px);
       }
       .service-price {
-        background-color: #111827;
+        background-color: #1f2937;
         padding-left: 0.5rem;
         z-index: 1;
         font-weight: 600;
@@ -251,11 +305,17 @@
           class="hidden md:flex space-x-8 uppercase text-sm tracking-widest"
           aria-label="Navegación principal"
         >
+          <a href="#destacados" class="hover:text-white transition duration-300"
+            >Trabajos</a
+          >
           <a href="#servicios" class="hover:text-white transition duration-300"
             >Servicios</a
           >
           <a href="#seminarios" class="hover:text-white transition duration-300"
             >Seminarios</a
+          >
+          <a href="#equipo" class="hover:text-white transition duration-300"
+            >Equipo</a
           >
           <a href="#reserva" class="hover:text-white transition duration-300"
             >Reserva</a
@@ -288,12 +348,16 @@
         id="mobile-menu"
         class="hidden md:hidden absolute top-0 left-0 w-full h-screen bg-black flex flex-col items-center justify-center space-y-8"
       >
+        <a href="#destacados" class="mobile-link text-2xl uppercase"
+          >Trabajos</a
+        >
         <a href="#servicios" class="mobile-link text-2xl uppercase"
           >Servicios</a
         >
         <a href="#seminarios" class="mobile-link text-2xl uppercase"
           >Seminarios</a
         >
+        <a href="#equipo" class="mobile-link text-2xl uppercase">Equipo</a>
         <a href="#reserva" class="mobile-link text-2xl uppercase">Reserva</a>
       </div>
     </header>
@@ -313,6 +377,7 @@
             id="heroVideo"
             poster="https://placehold.co/1920x1080/111111/FFFFFF?text=Imagen+de+Fondo"
           >
+            <!-- <source src="/video/IMG_1683.mp4" type="video/mp4"> -->
             Tu navegador no es compatible con el video.
           </video>
         </div>
@@ -336,9 +401,55 @@
             <a href="#reserva" class="btn-primary w-full sm:w-auto"
               >Reservar Ahora</a
             >
-            <a href="#seminarios" class="btn-secondary w-full sm:w-auto"
-              >Ver Seminarios</a
+            <a href="#servicios" class="btn-secondary w-full sm:w-auto"
+              >Ver Servicios</a
             >
+          </div>
+        </div>
+      </section>
+
+      <!-- Featured Work Section -->
+      <section id="destacados" class="py-20 bg-black animated">
+        <div class="container mx-auto px-6 text-center">
+          <h2 class="section-title">Trabajos Destacados</h2>
+          <div class="section-divider"></div>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8">
+            <div class="group relative overflow-hidden rounded-lg">
+              <img
+                loading="lazy"
+                decoding="async"
+                src="https://placehold.co/800x600/111111/FFFFFF?text=Fade"
+                alt="Hombre con un corte de pelo estilo fade y barba perfilada."
+                class="img-zoom"
+              />
+              <div class="img-overlay">
+                <h3 class="img-title">Fades Perfectos</h3>
+              </div>
+            </div>
+            <div class="group relative overflow-hidden rounded-lg">
+              <img
+                loading="lazy"
+                decoding="async"
+                src="https://placehold.co/800x600/111111/FFFFFF?text=Color"
+                alt="Joven con el pelo teñido de un color fantasía platinado."
+                class="img-zoom"
+              />
+              <div class="img-overlay">
+                <h3 class="img-title">Colorimetría Pro</h3>
+              </div>
+            </div>
+            <div class="group relative overflow-hidden rounded-lg">
+              <img
+                loading="lazy"
+                decoding="async"
+                src="https://placehold.co/800x600/111111/FFFFFF?text=Diseño"
+                alt="Corte de pelo con un diseño de líneas y formas geométricas."
+                class="img-zoom"
+              />
+              <div class="img-overlay">
+                <h3 class="img-title">Diseño Freestyle</h3>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -712,6 +823,73 @@
         </div>
       </section>
 
+      <!-- Team Section -->
+      <section id="equipo" class="py-20 bg-gray-900 animated">
+        <div class="container mx-auto px-6 text-center">
+          <h2 class="section-title">Nuestro Equipo</h2>
+          <div class="section-divider"></div>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-5xl mx-auto">
+            <div class="text-center group">
+              <img
+                loading="lazy"
+                decoding="async"
+                src="https://placehold.co/192x192/1f2937/FFFFFF?text=Michael"
+                alt="Retrato del barbero Michael"
+                class="w-48 h-48 rounded-full mx-auto border-4 border-white object-cover transform group-hover:scale-110 transition-transform duration-300"
+              />
+              <h3 class="mt-5 text-2xl font-display text-white uppercase">
+                Michael The Barber
+              </h3>
+              <p class="text-gray-400">Fundador / Especialista en Color</p>
+            </div>
+            <div class="text-center group">
+              <img
+                loading="lazy"
+                decoding="async"
+                src="https://placehold.co/192x192/1f2937/FFFFFF?text=Aleee"
+                alt="Retrato del barbero Aleee Cut"
+                class="w-48 h-48 rounded-full mx-auto border-4 border-white object-cover transform group-hover:scale-110 transition-transform duration-300"
+              />
+              <h3 class="mt-5 text-2xl font-display text-white uppercase">
+                Aleee Cut
+              </h3>
+              <p class="text-gray-400">Experto en Fades</p>
+            </div>
+            <div class="text-center group">
+              <img
+                loading="lazy"
+                decoding="async"
+                src="https://placehold.co/192x192/1f2937/FFFFFF?text=Kevo"
+                alt="Retrato del barbero Kevo Cuts"
+                class="w-48 h-48 rounded-full mx-auto border-4 border-white object-cover transform group-hover:scale-110 transition-transform duration-300"
+              />
+              <h3 class="mt-5 text-2xl font-display text-white uppercase">
+                Kevo Cuts
+              </h3>
+              <p class="text-gray-400">Especialista en Diseño Freestyle</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Testimonial Section -->
+      <section id="testimonios" class="py-20 bg-black animated">
+        <div class="container mx-auto px-6 text-center max-w-3xl">
+          <h2 class="section-title">Qué Dicen Nuestros Clientes</h2>
+          <div class="section-divider"></div>
+          <div class="text-white italic text-xl md:text-2xl">
+            <p>
+              "El mejor corte que me han hecho en años. Michael no solo es un
+              barbero, es un artista. El ambiente del estudio es increíble y la
+              atención, de primera. 100% recomendado."
+            </p>
+            <cite class="block not-italic text-gray-400 mt-4"
+              >- Cliente Satisfecho</cite
+            >
+          </div>
+        </div>
+      </section>
+
       <!-- Booking & Map Section -->
       <section id="reserva" class="py-20 bg-gray-900 animated">
         <div class="container mx-auto px-6">
@@ -931,84 +1109,99 @@
       </div>
     </footer>
 
-    <!-- JavaScript Interno para el MVP -->
+    <!-- JavaScript Interno -->
     <script>
       document.addEventListener("DOMContentLoaded", () => {
         // --- Lógica para el menú móvil ---
-        const menuBtn = document.getElementById("menu-btn"),
-          mobileMenu = document.getElementById("mobile-menu"),
-          menuOpenIcon = document.getElementById("menu-open-icon"),
-          menuCloseIcon = document.getElementById("menu-close-icon"),
-          mobileLinks = document.querySelectorAll(".mobile-link"),
-          toggleMenu = () => {
-            const e = "true" === menuBtn.getAttribute("aria-expanded");
-            mobileMenu.classList.toggle("hidden"),
-              menuBtn.setAttribute("aria-expanded", !e),
-              menuOpenIcon.classList.toggle("hidden"),
-              menuCloseIcon.classList.toggle("hidden"),
-              (document.body.style.overflow = e ? "" : "hidden");
-          };
-        menuBtn.addEventListener("click", toggleMenu),
-          mobileLinks.forEach((e) => {
-            e.addEventListener("click", toggleMenu);
-          });
+        const menuBtn = document.getElementById("menu-btn");
+        const mobileMenu = document.getElementById("mobile-menu");
+        const menuOpenIcon = document.getElementById("menu-open-icon");
+        const menuCloseIcon = document.getElementById("menu-close-icon");
+        const mobileLinks = document.querySelectorAll(".mobile-link");
 
-        // --- Lógica para el envío del formulario ---
-        const contactForm = document.getElementById("contact-form"),
-          formSuccessMessage = document.getElementById("form-success");
-        async function handleFormSubmit(e) {
-          e.preventDefault();
-          const t = e.target,
-            o = new FormData(t);
+        const toggleMenu = () => {
+          const isExpanded = menuBtn.getAttribute("aria-expanded") === "true";
+          mobileMenu.classList.toggle("hidden");
+          menuBtn.setAttribute("aria-expanded", !isExpanded);
+          menuOpenIcon.classList.toggle("hidden");
+          menuCloseIcon.classList.toggle("hidden");
+          document.body.style.overflow = isExpanded ? "" : "hidden";
+        };
+
+        menuBtn.addEventListener("click", toggleMenu);
+
+        mobileLinks.forEach((link) => {
+          link.addEventListener("click", toggleMenu);
+        });
+
+        // --- Lógica para el envío del formulario con Formspree ---
+        const contactForm = document.getElementById("contact-form");
+        const formSuccessMessage = document.getElementById("form-success");
+
+        async function handleFormSubmit(event) {
+          event.preventDefault();
+          const form = event.target;
+          const data = new FormData(form);
+
           try {
-            const n = await fetch(t.action, {
-              method: t.method,
-              body: o,
+            const response = await fetch(form.action, {
+              method: form.method,
+              body: data,
               headers: { Accept: "application/json" },
             });
-            n.ok
-              ? (formSuccessMessage.classList.remove("hidden"),
-                t.reset(),
-                setTimeout(() => {
-                  formSuccessMessage.classList.add("hidden");
-                }, 5e3))
-              : alert(
-                  "Hubo un error al enviar el formulario. Por favor, inténtalo de nuevo."
-                );
-          } catch (r) {
-            alert("Hubo un error de red. Por favor, revisa tu conexión."),
-              console.error("Form submission error:", r);
+
+            if (response.ok) {
+              formSuccessMessage.classList.remove("hidden");
+              form.reset();
+              setTimeout(() => {
+                formSuccessMessage.classList.add("hidden");
+              }, 5000);
+            } else {
+              alert(
+                "Hubo un error al enviar el formulario. Por favor, inténtalo de nuevo."
+              );
+            }
+          } catch (error) {
+            alert("Hubo un error de red. Por favor, revisa tu conexión.");
+            console.error("Form submission error:", error);
           }
         }
-        contactForm && contactForm.addEventListener("submit", handleFormSubmit);
+
+        if (contactForm) {
+          contactForm.addEventListener("submit", handleFormSubmit);
+        }
 
         // --- Lógica para animaciones al hacer scroll ---
         const animatedElements = document.querySelectorAll(".animated");
+
         if ("IntersectionObserver" in window) {
-          const a = new IntersectionObserver(
-            (e) => {
-              e.forEach((e) => {
-                e.isIntersecting &&
-                  (e.target.classList.add("is-visible"), a.unobserve(e.target));
+          const observer = new IntersectionObserver(
+            (entries) => {
+              entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                  entry.target.classList.add("is-visible");
+                  observer.unobserve(entry.target);
+                }
               });
             },
             { threshold: 0.1 }
           );
-          animatedElements.forEach((e) => {
-            a.observe(e);
+
+          animatedElements.forEach((el) => {
+            observer.observe(el);
           });
-        } else
-          animatedElements.forEach((e) => {
-            e.classList.add("is-visible");
+        } else {
+          animatedElements.forEach((el) => {
+            el.classList.add("is-visible");
           });
+        }
 
         // --- Lógica para el carrusel de seminarios ---
         const carousel = document.getElementById("carousel");
         if (carousel) {
           const prevButton = document.getElementById("prev");
           const nextButton = document.getElementById("next");
-          const cards = carousel.children;
-          const totalCards = cards.length;
+          const totalCards = carousel.children.length;
           let cardWidth = 0;
           let currentIndex = 0;
           let cardsInView = 3;
