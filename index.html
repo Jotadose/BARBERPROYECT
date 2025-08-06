@@ -295,6 +295,85 @@
         color: #d4af37;
         border-bottom-color: #d4af37;
       }
+
+      /* --- ESTILOS PARA FLIP CARD EQUIPO --- */
+      .flip-card {
+        background-color: transparent;
+        width: 100%;
+        max-width: 270px;
+        height: 300px;
+        perspective: 1000px;
+        font-family: "Poppins", sans-serif;
+        margin: 0 auto;
+      }
+      .flip-card-inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        transition: transform 0.6s;
+        transform-style: preserve-3d;
+      }
+      .flip-card:hover .flip-card-inner {
+        transform: rotateY(180deg);
+      }
+      .flip-card-front,
+      .flip-card-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        border-radius: 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      .flip-card-front {
+        background-color: #1f2937;
+        border: 2px solid #d4af37;
+      }
+      .flip-card-back {
+        background-color: #1f2937;
+        border: 2px solid #d4af37;
+        transform: rotateY(180deg);
+        padding: 1.5rem;
+      }
+      .profile-image {
+        width: 128px;
+        height: 128px;
+        border-radius: 9999px;
+        object-fit: cover;
+        border: 4px solid #d4af37;
+      }
+      .name {
+        margin-top: 1rem;
+        font-size: 1.5rem;
+        color: #d4af37;
+        font-family: "Oswald", sans-serif;
+        text-transform: uppercase;
+      }
+      .description {
+        font-size: 0.875rem;
+        color: #d1d5db;
+        line-height: 1.4;
+      }
+      .socialbar {
+        margin-top: 1.5rem;
+        display: flex;
+        justify-content: center;
+        gap: 1.5rem;
+      }
+      .socialbar svg {
+        width: 24px;
+        height: 24px;
+        color: #d4af37;
+        transition: color 0.3s ease;
+      }
+      .socialbar svg:hover {
+        color: #fff;
+      }
     </style>
   </head>
 
