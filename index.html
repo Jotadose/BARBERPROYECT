@@ -1063,136 +1063,205 @@
           <div class="section-divider"></div>
           <div class="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-5xl mx-auto">
             <!-- Team Member 1 -->
-            <div class="text-center group relative">
-              <img
-                loading="lazy"
-                decoding="async"
-                src="/img/IMG_5984.JPG"
-                alt="Retrato del barbero Michael"
-                class="w-48 h-48 rounded-full mx-auto border-4 border-white object-cover transform group-hover:scale-110 transition-transform duration-300"
-              />
-              <div
-                class="absolute inset-0 bg-black/70 rounded-full flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4"
-              >
-                <p class="text-sm text-gray-300 mb-3">
-                  Fundador y visionario, Michael transforma cada corte en una
-                  obra de arte.
-                </p>
-                <div class="flex space-x-4">
-                  <a href="#" aria-label="Instagram de Michael"
-                    ><svg
-                      class="w-6 h-6 hover:text-[#D4AF37] transition-colors"
-                      fill="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.011 3.584-.069 4.85c-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.584-.012-4.85-.07c-3.252-.148-4.771-1.691-4.919-4.919-.058-1.265-.069-1.645-.069-4.85s.011-3.584.069-4.85c.149-3.225 1.664-4.771 4.919-4.919 1.266-.058 1.644-.07 4.85-.07zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948s.014 3.667.072 4.947c.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072s3.667-.014 4.947-.072c4.358-.2 6.78-2.618 6.98-6.98.059-1.281.073-1.689.073-4.948s-.014-3.667-.072-4.947c-.2-4.358-2.618-6.78-6.98-6.98-1.281-.058-1.689-.072-4.948-.072zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.162 6.162 6.162 6.162-2.759 6.162-6.162-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4s1.791-4 4-4 4 1.79 4 4-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.441 1.441 1.441 1.441-.645 1.441-1.441-.645-1.44-1.441-1.44z"
-                      /></svg
-                  ></a>
-                  <a href="#" aria-label="WhatsApp de Michael"
-                    ><svg
-                      class="w-6 h-6 hover:text-[#D4AF37] transition-colors"
-                      fill="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 4.315 1.731 6.086l.001.004 4.971 4.971z"
-                      /></svg
-                  ></a>
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <img
+                    class="profile-image"
+                    src="/img/IMG_5984.JPG"
+                    alt="Retrato del barbero Michael"
+                  />
+                  <p class="name">Michael The Barber</p>
+                </div>
+                <div class="flip-card-back">
+                  <p class="description">
+                    Fundador y visionario, Michael transforma cada corte en una
+                    obra de arte. Especialista en colorimetría.
+                  </p>
+                  <div class="socialbar">
+                    <a href="#"
+                      ><svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      >
+                        <rect
+                          width="20"
+                          height="20"
+                          x="2"
+                          y="2"
+                          rx="5"
+                          ry="5"
+                        ></rect>
+                        <path
+                          d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"
+                        ></path>
+                        <line
+                          x1="17.5"
+                          x2="17.51"
+                          y1="6.5"
+                          y2="6.5"
+                        ></line></svg
+                    ></a>
+                    <a href="#"
+                      ><svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      >
+                        <path
+                          d="M22 4L12 14 9 11l-7 7M22 4h-6M22 4v6"
+                        ></path></svg
+                    ></a>
+                  </div>
                 </div>
               </div>
-              <h3 class="mt-5 text-2xl font-display text-white uppercase">
-                Michael The Barber
-              </h3>
-              <p class="text-gray-400">Fundador / Especialista en Color</p>
             </div>
             <!-- Team Member 2 -->
-            <div class="text-center group relative">
-              <img
-                loading="lazy"
-                decoding="async"
-                src="/img/barbero2.avif"
-                alt="Retrato del barbero Aleee Cut"
-                class="w-48 h-48 rounded-full mx-auto border-4 border-white object-cover transform group-hover:scale-110 transition-transform duration-300"
-              />
-              <div
-                class="absolute inset-0 bg-black/70 rounded-full flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4"
-              >
-                <p class="text-sm text-gray-300 mb-3">
-                  Con una precisión inigualable, Aleee es el maestro de los
-                  fades y degradados.
-                </p>
-                <div class="flex space-x-4">
-                  <a href="#" aria-label="Instagram de Aleee Cut"
-                    ><svg
-                      class="w-6 h-6 hover:text-[#D4AF37] transition-colors"
-                      fill="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.011 3.584-.069 4.85c-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.584-.012-4.85-.07c-3.252-.148-4.771-1.691-4.919-4.919-.058-1.265-.069-1.645-.069-4.85s.011-3.584.069-4.85c.149-3.225 1.664-4.771 4.919-4.919 1.266-.058 1.644-.07 4.85-.07zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948s.014 3.667.072 4.947c.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072s3.667-.014 4.947-.072c4.358-.2 6.78-2.618 6.98-6.98.059-1.281.073-1.689.073-4.948s-.014-3.667-.072-4.947c-.2-4.358-2.618-6.78-6.98-6.98-1.281-.058-1.689-.072-4.948-.072zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.162 6.162 6.162 6.162-2.759 6.162-6.162-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4s1.791-4 4-4 4 1.79 4 4-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.441 1.441 1.441 1.441-.645 1.441-1.441-.645-1.44-1.441-1.44z"
-                      /></svg
-                  ></a>
-                  <a href="#" aria-label="WhatsApp de Aleee Cut"
-                    ><svg
-                      class="w-6 h-6 hover:text-[#D4AF37] transition-colors"
-                      fill="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 4.315 1.731 6.086l.001.004 4.971 4.971z"
-                      /></svg
-                  ></a>
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <img
+                    class="profile-image"
+                    src="/img/barbero2.avif"
+                    alt="Retrato del barbero Aleee Cut"
+                  />
+                  <p class="name">Aleee Cut</p>
+                </div>
+                <div class="flip-card-back">
+                  <p class="description">
+                    Con una precisión inigualable, Aleee es el maestro de los
+                    fades y degradados.
+                  </p>
+                  <div class="socialbar">
+                    <a href="#"
+                      ><svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      >
+                        <rect
+                          width="20"
+                          height="20"
+                          x="2"
+                          y="2"
+                          rx="5"
+                          ry="5"
+                        ></rect>
+                        <path
+                          d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"
+                        ></path>
+                        <line
+                          x1="17.5"
+                          x2="17.51"
+                          y1="6.5"
+                          y2="6.5"
+                        ></line></svg
+                    ></a>
+                    <a href="#"
+                      ><svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      >
+                        <path
+                          d="M22 4L12 14 9 11l-7 7M22 4h-6M22 4v6"
+                        ></path></svg
+                    ></a>
+                  </div>
                 </div>
               </div>
-              <h3 class="mt-5 text-2xl font-display text-white uppercase">
-                Aleee Cut
-              </h3>
-              <p class="text-gray-400">Experto en Fades</p>
             </div>
             <!-- Team Member 3 -->
-            <div class="text-center group relative">
-              <img
-                loading="lazy"
-                decoding="async"
-                src="/img/barbero3.avif"
-                alt="Retrato del barbero Kevo Cuts"
-                class="w-48 h-48 rounded-full mx-auto border-4 border-white object-cover transform group-hover:scale-110 transition-transform duration-300"
-              />
-              <div
-                class="absolute inset-0 bg-black/70 rounded-full flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-4"
-              >
-                <p class="text-sm text-gray-300 mb-3">
-                  El artista del freestyle, Kevo lleva la creatividad y el
-                  diseño a otro nivel.
-                </p>
-                <div class="flex space-x-4">
-                  <a href="#" aria-label="Instagram de Kevo Cuts"
-                    ><svg
-                      class="w-6 h-6 hover:text-[#D4AF37] transition-colors"
-                      fill="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.011 3.584-.069 4.85c-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.584-.012-4.85-.07c-3.252-.148-4.771-1.691-4.919-4.919-.058-1.265-.069-1.645-.069-4.85s.011-3.584.069-4.85c.149-3.225 1.664-4.771 4.919-4.919 1.266-.058 1.644-.07 4.85-.07zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948s.014 3.667.072 4.947c.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072s3.667-.014 4.947-.072c4.358-.2 6.78-2.618 6.98-6.98.059-1.281.073-1.689.073-4.948s-.014-3.667-.072-4.947c-.2-4.358-2.618-6.78-6.98-6.98-1.281-.058-1.689-.072-4.948-.072zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.162 6.162 6.162 6.162-2.759 6.162-6.162-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4s1.791-4 4-4 4 1.79 4 4-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.441 1.441 1.441 1.441-.645 1.441-1.441-.645-1.44-1.441-1.44z"
-                      /></svg
-                  ></a>
-                  <a href="#" aria-label="WhatsApp de Kevo Cuts"
-                    ><svg
-                      class="w-6 h-6 hover:text-[#D4AF37] transition-colors"
-                      fill="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 4.315 1.731 6.086l.001.004 4.971 4.971z"
-                      /></svg
-                  ></a>
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <img
+                    class="profile-image"
+                    src="/img/barbero3.avif"
+                    alt="Retrato del barbero Kevo Cuts"
+                  />
+                  <p class="name">Kevo Cuts</p>
+                </div>
+                <div class="flip-card-back">
+                  <p class="description">
+                    El artista del freestyle, Kevo lleva la creatividad y el
+                    diseño a otro nivel.
+                  </p>
+                  <div class="socialbar">
+                    <a href="#"
+                      ><svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      >
+                        <rect
+                          width="20"
+                          height="20"
+                          x="2"
+                          y="2"
+                          rx="5"
+                          ry="5"
+                        ></rect>
+                        <path
+                          d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"
+                        ></path>
+                        <line
+                          x1="17.5"
+                          x2="17.51"
+                          y1="6.5"
+                          y2="6.5"
+                        ></line></svg
+                    ></a>
+                    <a href="#"
+                      ><svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      >
+                        <path
+                          d="M22 4L12 14 9 11l-7 7M22 4h-6M22 4v6"
+                        ></path></svg
+                    ></a>
+                  </div>
                 </div>
               </div>
-              <h3 class="mt-5 text-2xl font-display text-white uppercase">
-                Kevo Cuts
-              </h3>
-              <p class="text-gray-400">Especialista en Diseño Freestyle</p>
             </div>
           </div>
         </div>
