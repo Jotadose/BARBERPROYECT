@@ -203,7 +203,7 @@
         font-size: 1.125rem;
       }
       .service-name {
-        background-color: #111827;
+        background-color: #1f2937;
         padding-right: 0.5rem;
         z-index: 1;
       }
@@ -213,7 +213,7 @@
         transform: translateY(-4px);
       }
       .service-price {
-        background-color: #111827;
+        background-color: #1f2937;
         padding-left: 0.5rem;
         z-index: 1;
         font-weight: 600;
@@ -475,7 +475,6 @@
                     </div>
                   </div>
                 </div>
-                <!-- Puedes agregar más trabajos aquí siguiendo el mismo formato -->
               </div>
             </div>
             <!-- Controles -->
@@ -529,7 +528,7 @@
           <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             <!-- Card Barbería -->
             <div
-              class="bg-black/20 p-8 rounded-lg border border-gray-700 text-left"
+              class="bg-gray-800 p-8 rounded-lg border border-gray-700 text-left"
             >
               <div class="flex items-center mb-6">
                 <svg
@@ -579,7 +578,7 @@
             </div>
             <!-- Card Colorimetría -->
             <div
-              class="bg-black/20 p-8 rounded-lg border border-gray-700 text-left"
+              class="bg-gray-800 p-8 rounded-lg border border-gray-700 text-left"
             >
               <div class="flex items-center mb-6">
                 <svg
@@ -626,7 +625,7 @@
             </div>
             <!-- Card Extras -->
             <div
-              class="bg-black/20 p-8 rounded-lg border border-gray-700 text-left"
+              class="bg-gray-800 p-8 rounded-lg border border-gray-700 text-left"
             >
               <div class="flex items-center mb-6">
                 <svg
@@ -663,7 +662,7 @@
           <h2 class="section-title text-center">Próximos Seminarios</h2>
           <div class="section-divider"></div>
 
-          <div class="relative mt-8">
+          <div class="relative mt-12">
             <div class="overflow-hidden">
               <div
                 id="carousel"
@@ -1351,7 +1350,6 @@
               } else {
                 cardsInView = 3;
               }
-              // Asegurarse de que el carrusel no intente mostrar más tarjetas de las que existen
               cardsInView = Math.min(cardsInView, totalCards);
 
               cardWidth = carousel.clientWidth / cardsInView;
